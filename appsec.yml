@@ -15,4 +15,4 @@ permissions:
 AfterInstall:
   - location: afterinstall.sh
     timeout: 180
-© 2020 GitHub, Inc.
+
