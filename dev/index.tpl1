@@ -1,0 +1,3374 @@
+<?php
+function isMobile() {
+    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+}
+$user_id=Engine_Api::_()->user()->getViewer()->getIdentity();
+/*if($user_id==0){
+	$strURlL="https://busyfriends.com/login";
+    header("location:".$strURlL);
+    exit();
+}*/
+// If the user is on a mobile device, redirect them
+if(isMobile()){ ?>
+    <script type="text/javascript">
+function redirectLink(linkd){
+	window.location.href='https://www.busyfriends.com/pages/'+linkd;
+}
+</script>
+<?php
+	
+    $linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+    $Queryy =mysqli_query($linkhf,"SELECT id,cur_height_type FROM  engine4_measurement where user_id='".$user_id."' ORDER BY id desc");
+    $ress = mysqli_fetch_array($Queryy);
+    if($ress['id']!="" && $ress['cur_height_type']!="" && $ress['cur_height_type']!="0"){
+        $measurementStatus="yes";
+    }else{
+        $measurementStatus="no";
+    }
+?>
+<style type="text/css">
+.layout_sitemobile_aboutme .ui-btn-inner{ background-color:#CCC;}
+.mailcenter_middle {
+border: 1px solid #F0C3D8;
+margin-left: 0;
+padding: 5px;
+width: 97%;
+position: relative;
+float:left;
+}.section_curve {
+color: #2F7895;
+}.add-weight-page #mystats td {
+vertical-align: middle;
+}#mystats h2 {
+text-transform: uppercase;
+margin-bottom: 0;
+}#mystats .userDetailsText {
+/*border: 1px solid #CCCCCC;*/
+height: 100%;
+width: 100%;
+padding:.6em 20px;
+}
+div.ui-input-text{ margin-right:20px;}
+.layout_companytwitterstatus input[type="text"] {
+float: left;
+padding: 5px;
+}.mailcenter_top_middle{ font-size:14px !important;}
+.progress-txt h4.wgt-pgrs{ font-size:18px; margin-top:0;}
+.hs-progress {
+color: #FFFFFF;
+}.up-heading{ float:left; margin-top:10px; margin-bottom:-20px}
+.add-weight-page .progress-div {
+width: 80%;
+margin: 0 auto;
+margin-bottom: 20px;
+}.progress-div {
+text-align: left;
+border: 1px solid #E74B91;
+}.hs-progress {
+background: #E74B91;
+color: #FFFFFF;
+margin-bottom: 20px;
+}.progress-txt {
+padding: 7px;
+}.add-weight-page h4 {
+margin-top: 5px;
+margin-right: 5px;
+}.progress-txt h4 {
+margin-bottom: 0; border:none; color:#fff;
+}.progress-values {
+padding: 5px;
+background: #E74B91;
+color: #FFF700;
+height: 60px;
+padding-right: 0;
+}.layout_companytwitterstatus div {
+display: block; font-size:11px;
+}.measure-left {
+float: left;
+width: 120px;
+}.progress-values {
+color: #FFF700;
+}.progress-val {
+height: 40px;
+width: 120px;
+}.progress-val h1 {
+width: auto;
+font-size: 32px;
+float: left;
+margin-right: 2px;color: #FFF700;
+}.progress-val span {
+font-size: 12px;
+font-weight: bold;
+float: left;
+width: 35px;
+line-height: 14px;
+padding-top: 5px; color:#FFF700;
+}.progress-type {
+text-align: left;
+width: 95px;
+font-size: 12px;
+}.progress-type span {
+margin-right: 10px;color:#FFF700; float:left;
+}.progress-type input {
+text-align: left;
+margin-right: 3px;
+vertical-align: text-bottom;
+}.measure-right {
+float: left;
+width: 320px;
+}.measure-scale {
+width: 300px;
+height: 20px;
+margin-top: 10px;
+border: 1px solid #888888;
+background: #FFFFFF;
+}.measure-lines div {
+width: 30px;
+text-align: left;
+float: left;
+height: 6px;
+}.measure-lines div.last-div, .measure-no div.last-div {
+width: 1px;
+}.measure-no div {
+float: left;
+width: 29.5px;
+color: #FFFFFF;
+}.measure-table {
+text-align: left;
+}.measure-table .border-top-td {
+padding: 0 !important;
+}.hsPage td {
+min-width: 10%;
+}.border-top-td {
+border-top: 1px solid #ccc;
+}.hsPage td {
+padding: 5px 0 5px 2px;
+min-width: 10%;
+}.pink-txt {
+color: #DD5293;
+}td.lastTd {
+min-width: 20%;
+}.border-right-td {
+border-right: 1px solid #ccc;
+}.blue-txt {
+color: #3225E6;
+}.red-txt {
+color: red;
+}.graph {
+margin-top: 0px;
+margin-left: 5px;
+float:left;
+width:100%;
+}.add-weight-page .graph h4 {
+margin-left: 25px;
+}.graph select {
+float: none;
+width: 110px;
+}.layout_companytwitterstatus select {
+border: 1px solid #DEDEDE;
+margin-right: 5px;
+height: 25px;
+padding-top: 2px;
+}.chartData {
+border: 1px solid #FB972B;
+height: 150px;
+margin: 10px auto 0;
+width: 100%;
+margin-bottom: 5px;
+text-align:center;
+}.chartData .H1 {
+color: #000000;
+font-family: Arial,Geneva,Verdana,Helvetica,sans-serif;
+font-size: 13px;
+font-style: normal;
+font-variant: normal;
+font-weight: bold;
+line-height: normal;
+text-transform: none;
+text-align:center;
+padding-top:5px;
+padding-bottom:5px;
+}
+.layout_companytwitterstatus td{ font-size:11px;}
+.chartData td{ padding-left:5px;}
+.kgtxt{ float:left; margin-top:4px;}
+.cur-weight{ height:25px; line-height:25px; background:#FFF; font-size:16px; text-align:center;} 
+.inner-box-data {
+float: left;
+margin: 10px 20px;
+width: 80%;
+text-align: left;
+font-size: 12px;
+}.hf-hs-title {
+float: left;
+width: 75%;
+background: #E74B91;
+padding: 0px ;
+color: #FFFFFF;
+padding-bottom:2px;
+}.hf-hs-text {
+float: left;
+color:#FFF;
+padding:8px;
+}.hf-hs-nav {
+float: right;
+padding:8px;
+vertical-align:top;
+}.hf-hs-nav div img{ vertical-align:middle;}.hf-hs-nav div{vertical-align:top;}.hf-hs-nav a {
+color: #FFFFFF !important;
+vertical-align:top;
+cursor:pointer;
+}.hf-hs-nav img {
+height: 20px;
+}.inner-box-content {
+float: left;
+width: 100%;
+padding: 0px;
+border: 1px solid #E74B91;
+}.profile-item {
+border-bottom: 1px solid #ccc;
+padding-bottom: 8px;
+}.inner-box-content .profile-item {
+border-bottom: 0;
+}
+#hf-wbmt table td{text-align: left !important;float: left;}
+.weight-more {
+text-align: right;
+margin-top: 10px;
+}
+.colLeft{ text-align:right; padding-right:0;}
+.colRight{ text-align:left; padding-left:20px !important;}
+#statbox{ float:none !important; margin:0 auto; padding-top:10px; width:100% !important;}.graph{ margin-left:0;}
+/*#mystats input[type="submit"].addButton{background: #E2E2E2; border:1px solid #9A9A9A; border-radius:4px;width: auto;}
+#mystats input[type="button"].cancelButton{background: #E2E2E2; border:1px solid #9A9A9A; border-radius:4px;width: auto;}
+#mystats input[type="submit"], #mystats input[type="reset"], #mystats input[type="button"] {
+background: #E2E2E2; border:1px solid #9A9A9A; border-radius:4px;cursor: pointer;
+float: left;
+margin-right: 2px;
+width: auto;
+font-size: 11px;
+}
+.add-measure-buttons input {
+float: none !important;
+margin: 10px 0;
+}*/
+#mystats input[type="submit"] {
+margin-right: 5px;
+border: none;
+background: url(../images/button_bg.gif) no-repeat 0 0;
+width: 60px;
+cursor: pointer;
+height: 22px;
+line-height: 20px;
+}
+</style>
+<?php
+$expect_day = date("Y-m-d H:i:s", mktime(date('H'),date('i'),date('s'), date("m"), date("d")+2, date("y")));
+			$next_entry_date = date("h:i a F j, Y",strtotime($expect_day));
+			$next_update=$next_entry_date;
+?>
+<?php
+    function get_time_difference( $start, $end ){
+				
+				$uts['start']      =    strtotime($start);
+				$uts['end']        =    strtotime($end);
+				if( $uts['start']!==-1 && $uts['end']!==-1 )
+				{
+					if( $uts['end'] >= $uts['start'] ) {
+						$diff    =    $uts['end'] - $uts['start'];
+						if( $days=intval((floor($diff/86400))) )
+							$diff = $diff % 86400;
+						if( $hours=intval((floor($diff/3600))) )
+							$diff = $diff % 3600;
+						if( $minutes=intval((floor($diff/60))) )
+							$diff = $diff % 60;
+						$diff    =    intval( $diff );            
+						return( array('days'=>$days, 'hours'=>$hours, 'minutes'=>$minutes, 'seconds'=>$diff) );
+					}
+					else      {
+						return 0;
+					}
+				}
+				else  {
+						return 0;
+				}
+				return 0;
+			}
+    function addslashes_mq($value,$trim=false,$stripsql=false) {
+	if (is_array($value)) {
+		$return=array();
+		while (list($k,$v)=each($value)) {
+			$return[addslashes_mq($k)]=addslashes_mq($v);
+		}
+	} else {
+		if ($trim) {
+			$value=trim($value);
+		}
+		if(get_magic_quotes_gpc() == 0) {
+			$return=addslashes($value);
+		} else {
+			$return=$value;
+		}
+		if ($stripsql) {
+			$return=str_replace('%','\%',$return);
+			$return=str_replace('_','\_',$return);
+		}
+	}
+	return $return;
+	}	
+    function doGetHFMeasurementDetails($user_id){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$Query =mysqli_query($linkhf,"SELECT * FROM  engine4_measurement where user_id='".$user_id."' ");
+		$res =  mysqli_fetch_array($Query);
+		return $res;
+	}
+    function doGetInitialMeasureDetails($user_id){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$Query =mysqli_query($linkhf,"SELECT * FROM engine4_user_addmystats where user_id='".$user_id."' AND is_primary='Yes' LIMIT 1");
+		$res = mysqli_fetch_array($Query);
+		return $res[0];
+	}
+	function doGetCurrentMeasureDetails($user_id){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$Query =mysqli_query($linkhf,"SELECT * FROM engine4_user_addmystats where user_id='".$user_id."' ORDER BY AddedDate DESC LIMIT 1");
+		$res = mysqli_fetch_array($Query);
+		return $res[0];
+	}
+	function removeFirstChar($rtnStr){
+	 $res = substr($rtnStr, 1);
+	 return $res;
+	}
+    function initialWeightDetails($user_id){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+	   $sql="SELECT Weight_start from engine4_user_addmyweight WHERE user_id=$user_id AND is_primary='Yes'";
+		$res=mysqli_query($linkhf,$sql);
+		list($Weight_start)=mysqli_fetch_row($res);
+		return $Weight_start;
+	}
+	function currentWeightDetails($user_id){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+	    $sql="SELECT Weight_new from engine4_user_addmyweight WHERE user_id=$user_id AND is_primary='No' order by AddedDate DESC LIMIT 1";
+        
+		$res=mysqli_query($linkhf,$sql);
+		list($Weight_new)=mysqli_fetch_row($res);
+		if($Weight_new!=''){
+			return $Weight_new;
+		}else{
+		 $res = initialWeightDetails($user_id);
+		 return $res;
+		}
+	}
+    function get_measurement_weight($user_id,$details=''){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$query="SELECT Ident,Weight_new,Weight_start,AddedDate FROM engine4_user_addmyweight WHERE user_id='".$user_id."' ORDER BY Ident ASC";
+		 $res = mysqli_query($linkhf,$query);
+		 $tot = 0;
+		 while($row=mysqli_fetch_array($res))
+		 {
+			if($row['Weight_new']==0 && $row['Weight_start']!=0 ){
+			   $row['Weight_new'] = $row['Weight_start'];
+			   $row[1]=$row['Weight_start'];
+			}
+			$details[]= $row;
+		 }
+		  return $details;
+	}
+	function get_a_idealweight($user_id){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$total_results = mysqli_fetch_row(mysqli_query($linkhf,"SELECT ideal_weight_kg_value as idealweight,ideal_weight_lbs_value  FROM engine4_measurement  WHERE user_id=$user_id"));
+		return $total_results[0];
+	}
+    function GetAVG($resAry,$type){
+	  if($resAry){
+	  $count=0;
+	  $totRct = count($resAry);
+	  for($i=0;$i<$totRct;$i++){
+	   $count = $count + $resAry[$i][$type];
+	  }
+	  if($totRct!=''){
+	  	$AVG = $count/$totRct;
+	  	return $AVG;
+	  }
+	  }else{
+	  	return "0";
+	  } 
+	}
+	function build_a_chart($details,$WeightAVG,$xaxis='',$yaxis=''){ 
+	  if($details!=''){
+	  if($xaxis==''){
+  	     $xaxis ='Days';
+	  }
+	  if($yaxis==''){
+	    $yaxis ="Weight";
+	  }
+	  if($yaxis =="Weight"){
+	   $desc =  "description= ' Kg'";
+	  }else{
+	   $desc =  "description= ' Cm'";
+	  }
+	  $graphStr ='';
+	  $graphStr.= "<chart><series>";
+	   if($details!=''){
+	  $cntRecords = count($details);
+	  
+	  for($i=0;$i<$cntRecords;$i++){  // for loop for  build serious tag <serious> <value xid='0'>10/27/10</value>...</serious>
+	      $added_date = date('d/m',strtotime($details[$i]['AddedDate']));
+		  $graphStr.= "<value xid='".$i."'>$added_date</value>";
+	  }
+	     $graphStr.= "</series><labels><label lid='1'><x></x><y>190</y><rotate>true</rotate><text_size>10</text_size><text_color>#000000</text_color><align>left</align><text><![CDATA[<b>$yaxis</b>]]></text></label><label lid='2'><x>300</x><y>375</y><text_size>10</text_size><text_color>#000000</text_color><align>left</align><text><![CDATA[<b>$xaxis</b>]]></text></label></labels><graphs> <graph gid='0'>";
+	   $dataStr ='';
+	   for($i=0;$i<$cntRecords;$i++){  // for loop for build graph and their data tags
+	  	   $results = $details[$i][1];
+		   $graphStr.="<value xid='".$i."' $desc>$results</value>";
+	  }
+	   $graphStr.="</graph>";
+	   $graphStr.= "<graph gid='1'>";
+	   for($i=0;$i<$cntRecords;$i++){  // for loop for build graph and their second set of values for goal value
+	    $graphStr.="<value xid='".$i."' $desc>$WeightAVG</value>";
+	  }
+	  }
+	  $graphStr.="</graph></graphs></chart>";
+	  return $graphStr;
+	  }
+	}
+    function array_sort($array, $on, $sortorder)
+{
+    $new_array = array();
+    $sortable_array = array();
+	if(!empty($array)){
+    if (count($array) > 0) {
+        foreach ($array as $k => $v) {
+            if (is_array($v)) {
+                foreach ($v as $k2 => $v2) {
+                    if ($k2 == $on) {
+                        $sortable_array[$k] = $v2;
+                    }
+                }
+            } else {
+                $sortable_array[$k] = $v;
+            }
+        }
+        
+        switch ($sortorder) {
+            case 'SORT_ASC':
+                asort($sortable_array);
+            break;
+            case 'SORT_DESC':
+                arsort($sortable_array);
+            break;
+        }
+        foreach ($sortable_array as $k => $v) {
+            $new_array[] = $array[$k];
+        }
+    }
+	}
+    return $new_array;
+}
+function doGetUserBodyGoalDetails($user_id){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$Query =mysqli_query($linkhf,"SELECT * FROM engine4_user_addmystats where user_id='".$user_id."' AND gChest!='' AND gChest!='0' ORDER BY AddedDate DESC LIMIT 1");
+		$res = mysqli_fetch_array($Query);
+		return $res[0];
+	}
+	function doUpdateMyGoalDetail($objArray){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$goalWeightDetails=doGetHFMeasurementDetails($objArray['user_id']);
+				
+		if($goalWeightDetails['id']!=''){
+			$WhereClause = " Where id='".$goalWeightDetails['id']."' ";
+			mysqli_query($linkhf,"UPDATE engine4_measurement SET ideal_weight_type = 1, ideal_weight_kg_value = '".$objArray['frmGWeight']."' Where id='".$goalWeightDetails['id']."'");
+		}else{
+			$query=mysqli_query($linkhf,"INSERT INTO engine4_measurement(ideal_weight_type,ideal_weight_kg_value,user_id)
+                                                VALUES('1','".$objArray['frmGWeight']."','".$objArray['user_id']."') ");
+		}
+		$strURL="http://www.busyfriends.com/pages/add-your-weight";
+        header("location:".$strURL);
+        exit();
+	}
+    function getPreviousWeight($user_id,$Ident){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+    	$sql=mysqli_query($linkhf,"SELECT Weight_new,Weight_start from engine4_user_addmyweight WHERE Ident < $Ident AND user_id=$user_id ORDER BY Ident DESC LIMIT 1");
+    	$res=mysqli_fetch_array($sql);
+        return $res;
+    }
+    function getWeightDetails($user_id,$GoalWeight){
+		$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+    	$sql=mysqli_query($linkhf,"SELECT * from engine4_user_addmyweight WHERE user_id=$user_id ORDER BY AddedDate DESC");
+        while($row=mysqli_fetch_array($sql))
+		 {
+         	$row['AddedDate']=date('d M y',strtotime($row['AddedDate']));
+            if($row['Weight_new']=="" || $row['Weight_new']=="0" ){
+            	$row['Weight_new']=$row['Weight_start'];
+                $row['diff_txt']="Initial Weight";
+            }
+            
+            $previousWeights=getPreviousWeight($user_id,$row['Ident']);
+            if($previousWeights['Weight_new']=="" || $previousWeights['Weight_new']=="0" ){
+                $previous_weight=$previousWeights['Weight_start'];
+            }else{
+                $previous_weight=$previousWeights['Weight_new'];
+            }
+           	$diffWeight=$previous_weight-$row['Weight_new'];
+            if($row['diff_txt']==""){
+                 if($diffWeight<0){
+                    $row['diff_txt']="<span class='blue-txt'>Gained ".abs($diffWeight)." kg</span>";
+                 }else if($diffWeight>0){
+                    $row['diff_txt']="<span class='red-txt'>Lost ".abs($diffWeight)." kg</span>";
+                 }else{
+                    $row['diff_txt']="<span class='black-txt'>No Change</span>";
+                 }
+            }
+            $targetWeight=$GoalWeight-$row['Weight_new'];
+			 if($targetWeight>0){
+				$row['target_txt']="<span class='blue-txt'>Gain ".abs($targetWeight)." kg</span>";
+			 }else if($targetWeight<0){
+				$row['target_txt']="<span class='red-txt'>Lose ".abs($targetWeight)." kg</span>";
+			 }else{
+				$row['target_txt']="<span class='black-txt'>Target Achieved</span>";
+			 }
+			$details[]= $row;
+		 }
+        return $details;
+    }
+?>
+<?php
+            $user_id=Engine_Api::_()->user()->getViewer()->getIdentity();
+			$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+            $myuser_id=$user_id;
+			$expect_day = date("Y-m-d H:i:s", mktime(date('H'),date('i'),date('s'), date("m"), date("d")+2, date("y")));
+			$next_entry_date = date("h:i a F j, Y",strtotime($expect_day));
+			$next_update=$next_entry_date;
+			$query="SELECT * FROM engine4_user_addmyweight WHERE user_id='".$myuser_id."' AND is_primary='No' order by AddedDate DESC LIMIT 1 ";
+			$res=mysqli_query($linkhf,$query);
+			$result_Ary=mysqli_fetch_row($res);
+			$result['ident']=$result_Ary[0];
+			$result['user_id']=$result_Ary[1];
+			$result['Weight_new']=$result_Ary[2];
+			if($result_Ary[4]!=''){
+				$result['added_date']=date("F j, Y",strtotime($result_Ary[4]));
+			if($result['ident']!=''){
+				 $hlink = 'javascript:void()';
+				 $clickeve ="weight_popup()";			
+				 $link = "<a href= $hlink onclick=$clickeve>";
+				 $weight_popup=$link;
+				 $graph='View your Weight Graph';
+			}}
+			 if($result['Weight_new']==''){
+				  $query="SELECT * FROM engine4_user_addmyweight WHERE user_id='".$myuser_id."' AND is_primary='Yes' ";
+				 $res=mysqli_query($linkhf,$query);
+				   $result_Ary=mysqli_fetch_row($res);
+					$result['ident']=$result_Ary[0];
+					$result['user_id']=$result_Ary[1];
+					$result['Weight_new']=$result_Ary[3];
+            		if($result_Ary[4]!=''){ 
+						$result['added_date']=date("F j, Y",strtotime($result_Ary[4]));
+					}
+			  }
+			 $memberresult[]=$result;
+				$ini_query="SELECT Ident,Weight_start,AddedDate FROM engine4_user_addmyweight WHERE user_id='".$myuser_id."' AND is_primary='Yes'";		
+				//print $ini_query;
+                $ini_res=mysqli_query($linkhf,$ini_query);
+				list($Ident,$Weight_start,$AddedDate)=mysqli_fetch_row($ini_res);
+				$initial_weight=$Weight_start;
+				if($AddedDate!=''){
+			 		 $iniDate  = date("F j, Y",strtotime($AddedDate));
+					 $ini_date ="Your initial weight was recorded on ".$iniDate;
+				 }else{
+					 $ini_date ="No Initial Weight added";
+				 }  
+				$initial_date=$ini_date;
+			$sql= "select Ident,user_id,AddedDate  from engine4_user_addmyweight  WHERE user_id='".$myuser_id."' order by AddedDate  DESC LIMIT 1 ";
+			$fitnes_res=mysqli_query($linkhf,$sql);
+			list($Ident,$user_id,$CAddedDate)=mysqli_fetch_row($fitnes_res);
+			if($CAddedDate!=''){
+				$enddate   = date("Y-m-d H:i:s");
+				$date_diff = get_time_difference($CAddedDate,$enddate); 
+				if($date_diff['days']<2){
+					  $cAdded=date("Y-m-d H:i:s",strtotime($CAddedDate));
+			 		  $cDate  =date("jS F, Y ",strtotime($CAddedDate));
+                      $week_popup='alert("YOU CAN ONLY ADD YOUR WEIGHT ONCE A DAY\n\nTHE NEXT TIME YOU CAN ADD YOUR WEIGHT WILL BE ON OR AFTER\n\n '.date("h:i a F j, Y ",strtotime("2 days", strtotime($CAddedDate))).'")
+                      document.getElementById("myweight").value="";
+					 return false;';
+					$bft_week=$week_popup;
+				}
+				$nextMeasurement='YOU CAN ADD YOUR NEXT WEIGHT<br/> ON OR AFTER  - '.date("h:i a F j, Y ",strtotime("2 days", strtotime($CAddedDate)));
+			}else{
+				$nextMeasurement='YOU NEED TO ADD YOUR INITIAL WEIGHT';
+			}
+			if($CAddedDate!=''){
+			   $cAdded=date("Y-m-d H:i:s",strtotime($CAddedDate));
+			   $cDate  = date("F j, Y",strtotime($CAddedDate));
+			   $added_date = "Your current weight was last recorded on ".$cDate;
+			}else{
+			   $added_date = "No Current Weight added";
+			}
+			
+			if(isset($_REQUEST['add'])){
+                $sql="SELECT count(*)as total FROM engine4_user_addmyweight WHERE user_id=$myuser_id";
+                $fitnes_res=mysqli_query($linkhf,$sql);
+                $Weight_new=addslashes_mq($_REQUEST['myweight']);
+                list($total_count)=mysqli_fetch_row($fitnes_res);				
+                if($total_count>=1){
+                    $is_primary = 'No';
+                    $query="INSERT INTO engine4_user_addmyweight(user_id,Weight_new,AddedDate,Status,is_primary)
+                                                VALUES('$myuser_id','$Weight_new',now(),'Active','$is_primary') ";
+                }else{
+                    $is_primary = 'Yes';
+                    $query="INSERT INTO engine4_user_addmyweight(user_id,Weight_start,AddedDate,Status,is_primary)
+                                                VALUES('$myuser_id','$Weight_new',now(),'Active','$is_primary') ";
+                }
+                $ress=mysqli_query($linkhf,$query);
+                    
+                $Queryy =mysqli_query($linkhf,"SELECT id FROM  engine4_measurement where user_id='".$myuser_id."' ");
+                $result = mysqli_fetch_array($Queryy);
+         		mysqli_query($linkhf,"UPDATE engine4_measurement SET cur_weight_type = '1', cur_weight_kg_value = '$Weight_new' Where id='".$result[0]['id']."'");
+				//$insertid=$this->doInsertMyWeightDetail($_REQUEST);
+                $strURL="http://www.busyfriends.com/pages/add-your-weight";
+                header("location:".$strURL);
+                exit();
+			}
+			$goalWeightDetails=doGetHFMeasurementDetails($myuser_id);
+           
+			if($goalWeightDetails['ideal_weight_type']=='2'){
+			    $idealLbsFromStone=$goalWeightDetails['ideal_weight_kg_value']*'14';
+				$idealLbsValue=$idealLbsFromStone+$goalWeightDetails['ideal_weight_lbs_value'];
+				$idealKgValue=$idealLbsValue/'2.20462262';
+			}else if($goalWeightDetails['ideal_weight_type']=='1'){
+				$idealLbsValue=$goalWeightDetails['ideal_weight_kg_value']*'2.20462262';
+				$idealKgValue=$goalWeightDetails['ideal_weight_kg_value'];
+			}else if($goalWeightDetails['ideal_weight_type']=='3'){
+				$idealKgValue=$goalWeightDetails['ideal_weight_lbs_value']/'2.20462262';
+				$idealLbsValue=$goalWeightDetails['ideal_weight_lbs_value'];
+			}
+			  $user_id =$myuser_id;
+			  $progress="My";
+			 
+             $today=getdate(time());
+			 
+			$strInitialDetails=doGetInitialMeasureDetails($user_id);
+			$strCurrentDetails=doGetCurrentMeasureDetails($user_id);
+			$strProgressDetail=array();
+			if(empty($strCurrentDetails['LeftFoream_new']) && $strCurrentDetails['is_primary']=='Yes'){
+				 $strCurrentDetails['LeftFoream_new']=$strInitialDetails['LeftFoream_start'];
+				$strCurrentDetails['LeftBicep_new']=$strInitialDetails['LeftBicep_start'];
+				$strCurrentDetails['RightFoream_new']=$strInitialDetails['RightFoream_start'];
+				$strCurrentDetails['RightBicep_new']=$strInitialDetails['RightBicep_start'];
+				$strCurrentDetails['Neck_new']=$strInitialDetails['Neck_start'];
+				$strCurrentDetails['Chest_new']=$strInitialDetails['Chest_start'];
+				$strCurrentDetails['Waist_new']=$strInitialDetails['Waist_start'];
+				$strCurrentDetails['Hips_new']=$strInitialDetails['Hips_start'];
+				$strCurrentDetails['LeftThigh_new']=$strInitialDetails['LeftThigh_start'];
+				$strCurrentDetails['RightThigh_new']=$strInitialDetails['RightThigh_start'];
+				$strCurrentDetails['LeftCalf_new']=$strInitialDetails['LeftCalf_start'];
+				$strCurrentDetails['RightCalf_new']=$strInitialDetails['RightCalf_start'];
+			}
+			$strProgressDetail['LeftFoream']=$strCurrentDetails['gLeftFoream']-$strCurrentDetails['LeftFoream_new'];
+			$strProgressDetail['RightFoream']=$strCurrentDetails['gRightFoream']-$strCurrentDetails['RightFoream_new'];
+			$strProgressDetail['LeftBicep']=$strCurrentDetails['gLeftBicep']-$strCurrentDetails['LeftBicep_new'];
+			$strProgressDetail['RightBicep']=$strCurrentDetails['gRightBicep']-$strCurrentDetails['RightBicep_new'];
+			$strProgressDetail['Neck']=$strCurrentDetails['gNeck']-$strCurrentDetails['Neck_new'];
+			$strProgressDetail['Chest']=$strCurrentDetails['gChest']-$strCurrentDetails['Chest_new'];
+			$strProgressDetail['Waist']=$strCurrentDetails['gWaist']-$strCurrentDetails['Waist_new'];
+			$strProgressDetail['Hips']=$strCurrentDetails['gHips']-$strCurrentDetails['Hips_new'];
+			$strProgressDetail['LeftThigh']=$strCurrentDetails['gLeftThigh']-$strCurrentDetails['LeftThigh_new'];
+			$strProgressDetail['RightThigh']=$strCurrentDetails['gRightThigh']-$strCurrentDetails['RightThigh_new'];
+			$strProgressDetail['LeftCalf']=$strCurrentDetails['gLeftCalf']-$strCurrentDetails['LeftCalf_new'];
+			$strProgressDetail['RightCalf']=$strCurrentDetails['gRightCalf']-$strCurrentDetails['RightCalf_new'];
+			
+			$strProgressDetailMsg=array();
+			if($strProgressDetail['LeftFoream']>0){
+				$strProgressDetailMsg['LeftFoream']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['LeftFoream'])." cm</span>";
+			}else if($strProgressDetail['LeftFoream']<0){
+				$strProgressDetailMsg['LeftFoream']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['LeftFoream'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['LeftFoream']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['RightFoream']>0){
+				$strProgressDetailMsg['RightFoream']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['RightFoream'])." cm</span>";
+			}else if($strProgressDetail['RightFoream']<0){
+				$strProgressDetailMsg['RightFoream']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['RightFoream'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['RightFoream']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['LeftBicep']>0){
+				$strProgressDetailMsg['LeftBicep']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['LeftBicep'])." cm</span>";
+			}else if($strProgressDetail['LeftBicep']<0){
+				$strProgressDetailMsg['LeftBicep']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['LeftBicep'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['LeftBicep']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['RightBicep']>0){
+				$strProgressDetailMsg['RightBicep']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['RightBicep'])." cm</span>";
+			}else if($strProgressDetail['RightBicep']<0){
+				$strProgressDetailMsg['RightBicep']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['RightBicep'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['RightBicep']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['Neck']>0){
+				$strProgressDetailMsg['Neck']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['Neck'])." cm</span>";
+			}else if($strProgressDetail['Neck']<0){
+				$strProgressDetailMsg['Neck']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['Neck'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['Neck']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['Chest']>0){
+				$strProgressDetailMsg['Chest']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['Chest'])." cm</span>";
+			}else if($strProgressDetail['Chest']<0){
+				$strProgressDetailMsg['Chest']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['Chest'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['Chest']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['Waist']>0){
+				$strProgressDetailMsg['Waist']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['Waist'])." cm</span>";
+			}else if($strProgressDetail['Waist']<0){
+				$strProgressDetailMsg['Waist']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['Waist'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['Waist']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['Hips']>0){
+				$strProgressDetailMsg['Hips']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['Hips'])." cm</span>";
+			}else if($strProgressDetail['Hips']<0){
+				$strProgressDetailMsg['Hips']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['Hips'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['Hips']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['LeftThigh']>0){
+				$strProgressDetailMsg['LeftThigh']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['LeftThigh'])." cm</span>";
+			}else if($strProgressDetail['LeftThigh']<0){
+				$strProgressDetailMsg['LeftThigh']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['LeftThigh'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['LeftThigh']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['RightThigh']>0){
+				$strProgressDetailMsg['RightThigh']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['RightThigh'])." cm</span>";
+			}else if($strProgressDetail['RightThigh']<0){
+				$strProgressDetailMsg['RightThigh']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['RightThigh'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['RightThigh']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['LeftCalf']>0){
+				$strProgressDetailMsg['LeftCalf']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['LeftCalf'])." cm</span>";
+			}else if($strProgressDetail['LeftCalf']<0){
+				$strProgressDetailMsg['LeftCalf']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['LeftCalf'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['LeftCalf']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['RightCalf']>0){
+				$strProgressDetailMsg['RightCalf']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['RightCalf'])." cm</span>";
+			}else if($strProgressDetail['RightCalf']<0){
+				$strProgressDetailMsg['RightCalf']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['RightCalf'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['RightCalf']="<span class='black-txt'>Target Achieved</span>";
+			}
+		 
+			$strProgressDetail=$strProgressDetailMsg;
+			
+			$strDiffDetails=array();
+			
+			$leftForeamDiff=$strCurrentDetails['LeftFoream_new']-$strInitialDetails['LeftFoream_start'];
+			if($leftForeamDiff>0){
+				$strDiffDetails['LeftFoream']="<span class='red-txt'>".$leftForeamDiff." cm larger<span>";
+			}else if($leftForeamDiff<0){
+				$strDiffDetails['LeftFoream']="<span class='blue-txt'>".removeFirstChar($leftForeamDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['LeftFoream']="<span class='green-txt'>No Change<span>";
+			}
+			$LeftBicepDiff=$strCurrentDetails['LeftBicep_new']-$strInitialDetails['LeftBicep_start'];
+			if($LeftBicepDiff>0){
+				$strDiffDetails['LeftBicep']="<span class='red-txt'>".$LeftBicepDiff." cm larger<span>";
+			}else if($leftForeamDiff<0){
+				$strDiffDetails['LeftBicep']="<span class='blue-txt'>".removeFirstChar($LeftBicepDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['LeftBicep']="<span class='green-txt'>No Change<span>";
+			}
+			$RightForeamDiff=$strCurrentDetails['RightFoream_new']-$strInitialDetails['RightFoream_start'];
+			if($RightForeamDiff>0){
+				$strDiffDetails['RightFoream']="<span class='red-txt'>".$RightForeamDiff." cm larger<span>";
+			}else if($RightForeamDiff<0){
+				$strDiffDetails['RightFoream']="<span class='blue-txt'>".removeFirstChar($RightForeamDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['RightFoream']="<span class='green-txt'>No Change<span>";
+			}
+			$RightBicepDiff=$strCurrentDetails['RightBicep_new']-$strInitialDetails['RightBicep_start'];
+			if($RightBicepDiff>0){
+				$strDiffDetails['RightBicep']="<span class='red-txt'>".$RightBicepDiff." cm larger<span>";
+			}else if($RightBicepDiff<0){
+				$strDiffDetails['RightBicep']="<span class='blue-txt'>".removeFirstChar($RightBicepDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['RightBicep']="<span class='green-txt'>No Change<span>";
+			}
+			$NeckDiff=$strCurrentDetails['Neck_new']-$strInitialDetails['Neck_start'];
+			if($NeckDiff>0){
+				$strDiffDetails['Neck']="<span class='red-txt'>".$NeckDiff." cm larger<span>";
+			}else if($NeckDiff<0){
+				$strDiffDetails['Neck']="<span class='blue-txt'>".removeFirstChar($NeckDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['Neck']="<span class='green-txt'>No Change<span>";
+			}
+			$ChestDiff=$strCurrentDetails['Chest_new']-$strInitialDetails['Chest_start'];
+			if($ChestDiff>0){
+				$strDiffDetails['Chest']="<span class='red-txt'>".$ChestDiff." cm larger<span>";
+			}else if($ChestDiff<0){
+				$strDiffDetails['Chest']="<span class='blue-txt'>".removeFirstChar($ChestDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['Chest']="<span class='green-txt'>No Change<span>";
+			}
+			$WaistDiff=$strCurrentDetails['Waist_new']-$strInitialDetails['Waist_start'];
+			if($WaistDiff>0){
+				$strDiffDetails['Waist']="<span class='red-txt'>".$WaistDiff." cm larger<span>";
+			}else if($WaistDiff<0){
+				$strDiffDetails['Waist']="<span class='blue-txt'>".removeFirstChar($WaistDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['Waist']="<span class='green-txt'>No Change<span>";
+			}
+			$HipsDiff=$strCurrentDetails['Hips_new']-$strInitialDetails['Hips_start'];
+			if($HipsDiff>0){
+				$strDiffDetails['Hips']="<span class='red-txt'>".$HipsDiff." cm larger<span>";
+			}else if($HipsDiff<0){
+				$strDiffDetails['Hips']="<span class='blue-txt'>".removeFirstChar($HipsDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['Hips']="<span class='green-txt'>No Change<span>";
+			}
+			$LeftThighDiff=$strCurrentDetails['LeftThigh_new']-$strInitialDetails['LeftThigh_start'];
+			if($LeftThighDiff>0){
+				$strDiffDetails['LeftThigh']="<span class='red-txt'>".$LeftThighDiff." cm larger<span>";
+			}else if($LeftThighDiff<0){
+				$strDiffDetails['LeftThigh']="<span class='blue-txt'>".removeFirstChar($LeftThighDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['LeftThigh']="<span class='green-txt'>No Change<span>";
+			}
+			$RightThighDiff=$strCurrentDetails['RightThigh_new']-$strInitialDetails['RightThigh_start'];
+			if($RightThighDiff>0){
+				$strDiffDetails['RightThigh']="<span class='red-txt'>".$RightThighDiff." cm larger<span>";
+			}else if($RightThighDiff<0){
+				$strDiffDetails['RightThigh']="<span class='blue-txt'>".removeFirstChar($RightThighDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['RightThigh']="<span class='green-txt'>No Change<span>";
+			}
+			$LeftCalfDiff=$strCurrentDetails['LeftCalf_new']-$strInitialDetails['LeftCalf_start'];
+			if($LeftCalfDiff>0){
+				$strDiffDetails['LeftCalf']="<span class='red-txt'>".$LeftCalfDiff." cm larger<span>";
+			}else if($LeftCalfDiff<0){
+				$strDiffDetails['LeftCalf']="<span class='blue-txt'>".removeFirstChar($LeftCalfDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['LeftCalf']="<span class='green-txt'>No Change<span>";
+			}
+			$RightCalfDiff=$strCurrentDetails['RightCalf_new']-$strInitialDetails['RightCalf_start'];
+			if($RightCalfDiff>0){
+				$strDiffDetails['RightCalf']="<span class='red-txt'>".$RightCalfDiff." cm larger<span>";
+			}else if($RightCalfDiff<0){
+				$strDiffDetails['RightCalf']="<span class='blue-txt'>".removeFirstChar($RightCalfDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['RightCalf']="<span class='green-txt'>No Change<span>";
+			}
+						
+			 $initial_weight = initialWeightDetails($user_id);
+			 $weight_new = currentWeightDetails($user_id);
+			 if($weight_new!=''){
+					$Weight_newlbs = round($weight_new*2.20462262,2);
+					$weight_diff    = $weight_new - $initial_weight;
+					$Weight_difflbs =  round($weight_diff*2.20462262,2);
+			 }
+			 $initial_weightLBS =round($initial_weight*2.20462262,2);
+			$initial_weight=$initial_weight;
+			$initial_weightLBS=$initial_weightLBS;			
+			if($weight_diff<0){
+				$Str1= '<strong><div style="color:#339900; font-size:13px;"> Your Current Weight is '.$weight_new.'Kg ('.$Weight_newlbs.'lbs)';
+				$Str.= '<strong><div style="color:#0000ff; font-size:13px;"> You have Lost '.abs($weight_diff).'Kg ('.abs($Weight_difflbs).'lbs)';
+				$weight_diff_txt="<span class='blue-txt'>".removeFirstChar($weight_diff)." kg lost<span>";
+			}else if($weight_diff>0){
+				 $Str1= '<strong><div style="color:#339900; font-size:13px;"> Your Current Weight is '.$weight_new.'Kg ('.$Weight_newlbs.'lbs)';
+				 $Str= '<strong><div style="color:#FF0000; font-size:13px;"> Your Weight has Increased by '.$weight_diff.'Kg ('.$Weight_difflbs.'lbs)';
+				 $weight_diff_txt="<span class='red-txt'>".$weight_diff." kg gained<span>";
+			}else{
+				$Str= '<strong><div style="color:#54B532; font-size:13px;">Your Weight has not changed </div></strong>';
+				$Str1='';
+				$weight_diff_txt="<span class='green-txt'>No Change<span>";
+			}
+			$initial_weight=$initial_weight;
+			$current_weight=$weight_new;
+			$weight_diff_txt=$weight_diff_txt;
+			$weight_msg=$Str;
+			$currentweight_msg=$Str1;
+			 $myuser_id=$user_id;
+			 $weightmeasurementAry  = get_measurement_weight($user_id); 
+			 $avg_type ="Weight_new";
+			 
+			 $GoalWeight =get_a_idealweight($myuser_id);
+			 $goal_weight=$GoalWeight;
+			 $targetWeight=$GoalWeight-$weight_new;
+			 if($targetWeight>0){
+				$targetWeightmsg="<span class='blue-txt'>You need to gain ".abs($targetWeight)." kg</span>";
+			 }else if($targetWeight<0){
+				$targetWeightmsg="<span class='red-txt'>You need to lose ".abs($targetWeight)." kg</span>";
+			 }else{
+				$targetWeightmsg="<span class='black-txt'>Target Achieved</span>";
+			 }
+			 $target_weight=$targetWeight;
+			 $targetWeightmsg=$targetWeightmsg;
+			 $build_chart = build_a_chart($weightmeasurementAry,$GoalWeight);
+			
+			 $WeightAVG = GetAVG($weightmeasurementAry,$myuser_id);
+		   
+			 $chart_data =$build_chart;
+			 $lossgain = $weight_new - $initial_weight;
+			 $aryMinValue         = array_sort($weightmeasurementAry,'Weight_new',$sortorder='SORT_ASC');
+			 $minValue            = $aryMinValue[0]['Weight_new'];
+			 $aryMaxValue         = array_sort($weightmeasurementAry,'Weight_new',$sortorder='SORT_DESC');
+			 $maxValue            = $aryMaxValue[0]['Weight_new'];
+			 
+			 $WeightAVG=($maxValue+$minValue)/2;
+             if($lossgain>0){ 
+          	$txtlg="Gained"; 
+          }else{ 
+          	$txtlg="Lost"; 
+          }
+			$stats_box ='<table cellspacing="2" cellpadding="3" border="0" bgcolor="#FBD68A" align="center" width="100%" class="chartData"><tbody><tr><td align="center" class="H1" colspan="2">Weight Stats</td></tr><tr><td width="20%" class="tdBlue colLeft">Starting Weight:</td><td width="20%" class="tdBlue colRight">'.round($initial_weight).' Kg</td></tr><tr><td width="20%" class="tdBlue colLeft">Current Weight:</td><td width="20%" class="tdBlue colRight">'.round($weight_new).' Kg</td></tr><tr><td width="20%" class="tdBlue colLeft">Lowest Weight:</td> <td width="20%" class="tdBlue colRight">'.round($minValue).' Kg</td></tr><tr><td width="20%" class="tdBlue colLeft">Highest Weight:</td><td width="20%" class="tdBlue colRight">'.round($maxValue).' Kg</td></tr><tr> <td width="20%" class="tdBlue colLeft">Average Weight:</td>      <td width="20%" class="tdBlue colRight ">'.round($WeightAVG).' Kg</td></tr><tr><td width="20%" class="tdBlue colLeft"> '.$txtlg.':</td>      <td width="20%" class="tdBlue colRight">'.abs(round($lossgain)).' Kg</td></tr><tr><td align="center" class="H1" colspan="2"><b>Your Weight Goal: '.round($GoalWeight).' Kg</b></td></tr></tbody></table>';
+				
+			$strGoalMeasurememt=doGetUserBodyGoalDetails($user_id);
+			$stats_box=$stats_box;
+			$chart=$chart_data;
+			$diffMeasureDetails=$strDiffDetails;
+			$initialMeasurement=$strInitialDetails;
+			$currentMeasurement=$strCurrentDetails;
+			$goalMeasurememt=$strGoalMeasurememt;
+			
+			 $initial_weight = initialWeightDetails($user_id);
+			 $weight_new = currentWeightDetails($user_id);
+			 if($weight_new!=''){
+					$Weight_newlbs = round($weight_new*2.20462262,2);
+					$weight_diff    = $weight_new - $initial_weight;
+					$Weight_difflbs =  round($weight_diff*2.20462262,2);
+			 }
+						
+			if($weight_diff<0){
+				$kgVal=abs($weight_diff);
+				$lbsVal=abs($Weight_difflbs);
+				$kgTxt="kg lost";
+				$lbsTxt="lbs lost";
+				$kgWidth=$kgVal*30;
+				$lbsWidth=$lbsVal*3;
+			}else if($weight_diff>0){
+				 $kgVal=$weight_diff;
+				 $lbsVal=$Weight_difflbs;
+				 $kgTxt="kg gained";
+				 $lbsTxt="lbs gained";
+				 $kgWidth=$kgVal*30;
+				 $lbsWidth=$lbsVal*3;
+			}else{
+				$kgVal="";
+				$lbsVal="";
+				$kgTxt="No Change";
+				$lbsTxt="No Change";
+				$kgWidth="0";
+				$lbsWidth="0";
+			}
+			if($kgVal >'10'){
+				$kgWidth=substr($kgVal,-1,1)*30;
+				$tensval=substr($kgVal,0,1);
+				if($tensval>'1'){
+					$tens=$tensval;
+				}
+				$kgLast=(($tensval+1)*10);
+			}else{
+				$kgLast=10;
+			}
+			$lbsVal=round($lbsVal,0);
+			if($lbsVal >'100'){
+				$hdVal=$lbsVal-100;
+				$lbsWidth=$hdVal*3;
+				$lbsSrt="100";
+				$lbsEnd="200";
+				$lbsLast="200";
+			}else{
+				$lbsSrt="0";
+				$lbsEnd="100";
+				$lbsLast="100";
+			}
+			if(isset($_POST['frmGWeight'])){
+				$insertid=doUpdateMyGoalDetail($_REQUEST);
+			}
+			$kgLast=$kgLast;
+			$lbsLast=$lbsLast;
+			$lbsSrt=$lbsSrt;
+			$lbsEnd=$lbsEnd;
+			$progress=$progress;
+			$lbsWidth=$lbsWidth;
+			$kgWidth=$kgWidth/10;  
+			$kgVal=$kgVal;
+			$lbsVal=$lbsVal;
+			$kgTxt=$kgTxt;
+			$lbsTxt=$lbsTxt;
+			$goalWeightValue=$idealKgValue;
+			$added_date=$added_date;
+			$details=$memberresult[0]; 
+			$user_id=$myuser_id;
+?>
+<script type="text/javascript">
+	function calculateHeight(fld)
+{
+	if(fld.name=="height_in" || fld.name=="height_ft")
+	{
+		// calculate height in inches
+		if(isNaN(fld.form.height_in.value) || fld.form.height_in.value=="") inches=0;
+		else inches=fld.form.height_in.value;
+		if(isNaN(fld.form.height_ft.value) || fld.form.height_ft.value=="") feet=0;
+		else feet=fld.form.height_ft.value;
+		inches=parseInt(parseInt(feet*12) + parseInt(inches));
+		h=Math.round(inches*2.54);
+		fld.form.height_cm.value=h;
+	}
+	else
+	{
+		// turn cm into feets and inches
+		if(isNaN(fld.value) || fld.value=="") cm=0;
+		else cm=fld.value;
+		totalInches=Math.round(cm/2.54);
+		inches=totalInches%12;		
+		feet=(totalInches-inches)/12;
+		fld.form.height_ft.value=feet;
+		fld.form.height_in.value=inches;
+	}
+}
+function calculateWeight(fld)
+{
+	if(fld.name=="weight_lb" || fld.name=="lose_lb")
+	{
+		// calculate in kg
+		if(isNaN(fld.value) || fld.value=="") w=0;
+		else w=fld.value;
+		wKg=Math.round(w*0.453*10)/10;
+		if(fld.name=="weight_lb") fld.form.weight_kg.value=wKg;
+		else fld.form.lose_kg.value=wKg;
+	}
+	else
+	{
+		// calculate in lbs
+		if(isNaN(fld.value) || fld.value=="") w=0;
+		else w=fld.value;
+		wP=Math.round(w*2.2);
+		if(fld.name=='weight_kg') fld.form.weight_lb.value=wP;
+		else fld.form.lose_lb.value=wP;
+	}
+}
+function ClearForm(form){
+form.height_ft.value = "";
+form.height_in.value = "";
+form.height_cm.value = "";
+form.weight_lb.value = "";
+form.weight_kg.value = "";
+}
+function IsAmount(sText) {
+	var ValidChars = "0123456789.";
+	var IsAmount=true;
+	var Char;
+	if(sText=="") return false
+		for (i = 0; i < sText.length && IsAmount == true; i++) 	
+		{ 
+			Char = sText.charAt(i); 
+			if (ValidChars.indexOf(Char) == -1) 
+			{
+				IsAmount = false;
+			}
+		}
+		return IsAmount;
+	}
+function IsValid(Val,Label) {
+	if(trim(Val)=="")
+	{
+		alert(Label+" Should Not be Empty")
+		return false;
+	}
+	return true;
+}
+function trim(str) {
+	return str.replace(/^\s*|\s*$/g,"");
+}
+function validateMyStas()
+{
+		var error;
+       
+		if(!document.getElementById('myweight').value){
+			alert("Please enter Weight");
+			document.getElementById('myweight').focus();
+			error=1;
+			return false;
+		} else if(isNaN(document.getElementById('myweight').value)) {
+			alert("Weight does not contain characters");
+			document.getElementById('myweight').focus();
+			error=1;
+			return false;					
+		}
+    	/*if(!document.getElementById('myideal').value){
+		alert("Please enter Ideal");
+		document.getElementById('myideal').focus();
+		error=1;
+		return false;
+		} else if(isNaN(document.getElementById('myideal').value)) {
+			alert("Ideal does not contain characters");
+			document.getElementById('myideal').focus();
+			error=1;
+			return false;					
+		 }*/
+		
+		if(error!=1)
+		{	 <?php echo $bft_week; ?>
+				//return false;
+			 var valid=confirm("ARE YOU SURE YOU WANT TO RECORD THIS BODY WEIGHT.\n\nOnce submited, it can't be changed or un-done.\n\nYour next scheduled Weight record can be added ON OR  after <?php echo $next_update; ?>");
+			 if (valid==true){
+				 document.addmystats.submit();	
+			 }else{
+			   return false;
+			 }
+		 }
+}
+function weight_popup(){
+  var win = window.open('stats_weight_chart.php', 'FitnessTest', 'height=400, width=525, left=20, top=20, toolbar=no, menubar=no, directories=no, location=no, scrollbars=no, status=no, resizable=yes, fullscreen=no'); 
+  win.focus();     
+	win.moveTo(0, 0);
+}
+function removeGoalValue(){
+	document.getElementById('frmGWeight').value="";
+}
+function validateMyWeightGoals(){
+	if(document.getElementById('frmGWeight').value==''){
+		alert('Please enter your Goal Weight');
+		document.getElementById('frmGWeight').focus();
+		return false;
+	}else{
+		document.weightGoal.submit();
+	}
+}
+function calcIt() {
+	oForm = document.calc;
+	feet = parseInt(oForm.feet.value*1);
+	inches = parseInt(oForm.inches.value*1);
+	if (!isNumeric(feet,"Feet:","feet"))
+		return false;
+	if (!isNumeric(inches,"Inches:","inches"))
+		return false;
+	if  (feet <= 3 || inches > 11) {
+		alert ("Invalid data.  Please check and re-enter!");
+		return false;
+	}
+	var weight = 0;
+	var height = ((feet*12) + inches);
+	if (oForm.sex[0].checked) {
+		if (height >= 60) {
+			height -= 60;
+			weight = 106 + (6 * height);
+		} else {
+			weight = 76 + (2.5 * (inches));
+		}
+	} else {
+		if (height >= 60) {
+			height -= 60;
+			weight = 100 + (5 * height);
+		} else {
+			weight = 70 + (2.5 * (inches));
+		}
+	}
+	frame=oForm.frame.options[oForm.frame.selectedIndex].value;
+	if (frame == 'S')
+		weight -= Math.round(weight * .07);
+	if (frame == 'L')
+		weight += Math.round(weight * .07);
+	s = weight + " - " + (weight + 4) + " pounds<br>";
+	kilos = Math.round(weight/2.2);
+	s += kilos + " - " + (kilos+2) + " kilograms";
+	Get("results").style.border="1px solid #2F7895";
+	Get("results").innerHTML = s;
+	return true;
+}
+function resetCalc(){
+	Get("results").style.border="0px solid #2F7895";
+	Get("results").innerHTML = '';
+}
+function showMeasureVal(showDivId,hideDivId){
+	document.getElementById(showDivId).style.display='block';
+	document.getElementById(showDivId+'-Scall').style.display='block';
+	document.getElementById(hideDivId).style.display='none';
+	document.getElementById(hideDivId+'-Scall').style.display='none';
+}
+function GetXmlHttpObject() {
+		if (window.XMLHttpRequest) {
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+			return new XMLHttpRequest();
+		}
+		if (window.ActiveXObject) {
+		// code for IE6, IE5
+			return new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		return null;
+	}
+function getmeasurementDetails(mSg) {
+var measure = document.getElementById('browseby').value;
+if(mSg=='change'){
+	document.getElementById("weight-Div").style.display='none';
+	document.getElementById("leftfoream-Div").style.display='none';
+	document.getElementById("leftbicep-Div").style.display='none';
+	document.getElementById("rightforearm-Div").style.display='none';
+	document.getElementById("rightbicep-Div").style.display='none';
+	document.getElementById("neck-Div").style.display='none';
+	document.getElementById("chest-Div").style.display='none';
+	document.getElementById("waist-Div").style.display='none';
+	document.getElementById("hips-Div").style.display='none';
+	document.getElementById("leftthigh-Div").style.display='none';
+	document.getElementById("rightthigh-Div").style.display='none';
+	document.getElementById("leftcalf-Div").style.display='none';
+	document.getElementById("rightcalf-Div").style.display='none';
+	document.getElementById(measure+'-Div').style.display='table-row';
+}
+var viewby  = document.getElementById('viewby').value;
+var view_user  = document.getElementById('view_user').value;
+xmlhttp=GetXmlHttpObject();
+	if(xmlhttp!=null) {
+		var url    = 'ajax_amlinechart_functions.php?measurement='+measure+'&viewby='+viewby+'&view_user='+view_user;
+		xmlhttp.onreadystatechange = Ajaxsuccess;
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send(null);
+	} else {
+		alert("Your browser doesn't support xmlhttp");
+		return;
+	}
+}
+
+function Ajaxsuccess() {
+	if(xmlhttp.readyState == 4) {
+		var strValue =	xmlhttp.responseText;
+		//alert(strValue);
+		var responceString =strValue.split("&&"); 
+		chartJS(responceString[0]);
+		document.getElementById('statbox').innerHTML = responceString[1];
+	}
+}
+function chartJS(XMLdata){
+	var so = new SWFObject("amline/chart_source/amline.swf", "amline", "440", "250", "8", "#FFFFFF");
+			so.addVariable("path", "amline/chart_source/");
+			so.addVariable("settings_file", encodeURIComponent("amline/chart_source/amline_settings.xml"));
+			so.addVariable("chart_data", encodeURIComponent(XMLdata));
+			so.write("flashcontent");	
+}
+function showHFHSWBDetail(divId){	
+	document.getElementById(divId+"-show").style.display="none";
+	document.getElementById(divId+"-hide").style.display="block";
+	document.getElementById(divId).style.display="block";
+}
+function hideHFHSDetail(divId){
+	document.getElementById(divId+"-hide").style.display="none";
+	document.getElementById(divId+"-show").style.display="block";
+	document.getElementById(divId).style.display="none";
+} 
+function viewMoreList(val){
+	var curCnt=eval(document.getElementById('show_more_count_'+val).value);
+	var totalCnt=eval(document.getElementById('total_count_'+val).value);
+	var nextcnt=(curCnt+5);
+	
+	if(totalCnt<nextcnt){
+	nextcnt=totalCnt-1;
+	}
+	for(var i=curCnt;i<=nextcnt;i++) {
+	document.getElementById(val+i).style.display="block";
+	}
+	var checkCnt=totalCnt-1;
+	//alert(checkCnt);alert(nextcnt);
+	if(checkCnt<=nextcnt){
+	document.getElementById('show_more_'+val).style.display="none";
+	}
+	document.getElementById('show_more_count_'+val).value=nextcnt;
+}              
+</script>
+<h2 style="text-align:center"> ADDING YOUR  WEIGHT </h2>
+<div class="mailcenter_middle add-weight-page"> 
+			<div>
+            <h2 style="text-align:center; padding-top:10px;"><strong>Please Note</strong></h2>
+        <P align="left" colspan="2" class="desc-txt" style="text-align:justify; padding-right:5px;border-bottom: 1px solid #096;">Knowing your weight and how it changes over a period of time can be a great motivational tool. Having a visual record of your weight helps to highlight how changes in your food and exercise can make a difference. We all know that our weight fluctuates from day to day so you may only add your weight once every 7 days. Your &quot;weight goals&quot; can be added or changed at any time but  once you enter your actual weight for a given week, you'll not be able to change or delete it.. We advise <strong>CAUTION</strong> when entering your weight, be honest, submitting wrong or false weights will only serve to display inaccurate data.<br />
+          <br /></p>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">			  
+				  <tr>
+					<td height="30" align="center" class="section_curve">
+				  <loop name="details">
+				  
+					<table border="0" width="80%" cellPadding="0" cellSpacing="0" id="mystats" style="text-align:left; /*float:left;*/">
+                   
+					  <tr>
+						<td colspan="2"  style="padding-left:5px;"><table width="100%" border="0">
+						  <tr>
+							<td width="" height="40"   valign="bottom" nowrap="nowrap" align="left">Add Todays Weight</td>
+                          </tr>
+                          <tr>
+							  <td width=""  align="left" valign="top" nowrap="nowrap">
+                               <form name="addmystats" id="addmystats" action="pages/add-your-weight?add=1" method="post" >
+					  			<input type="hidden" name="user_id" value="<?php echo $user_id; ?>" />
+                              <input type="text" name="myweight" id="myweight"  value="" class="userDetailsText"/> 
+								 </td>
+                                <td height="30" colspan="4"  align="left" nowrap="nowrap" class="">
+							<input type="submit"  onclick=" return validateMyStas();" name="submit" id="AddMyStats" value="Add" style="cursor:pointer; margin-left:10px;"/>
+							<input type="hidden" name="myGweightd" id="myGweightd" value="<?php echo $goalWeightValue; ?>"  />
+                             </form>
+							 </td>
+                           </td>
+                           <tr>
+							  <td width="" align="left" style="padding-left:0px; padding-right:2px;" >Add Your Goal</td> 
+                           </tr>
+                           <tr>
+							  <td width="" align="left" valign="top">
+                              <form name="weightGoal" id="weightGoal" action="pages/add-your-weight" method="post" >
+                             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" />
+                              <input onclick="removeGoalValue();" type="text" name="frmGWeight" id="frmGWeight" value="<?php echo $goalWeightValue; ?>" class="userDetailsText"/>
+                               </td>
+                              <td align="left">
+                              	<input type="submit" onclick="validateMyWeightGoals();" name="gWghtButton" id="gWghtButton" value="Add Goal" style="margin-right:8px;margin-left:10px;" /></form>
+                              </td>
+                              
+							</tr>
+						  <tr>
+							<td colspan="2"  align="left" nowrap="nowrap">
+                            	
+                            </td>
+							        </tr>
+						 
+						  <tr>
+							</tr>
+						  </table></td>
+					  </tr>
+					  
+					  <tr><td height="8px"></td></tr>
+					  </table>
+				  
+				</loop name="details"></td></tr>
+				</table>                   
+                    <div class="measure-table hsPage">
+                    <table  border="0" cellspacing="0" cellpadding="0" width="100%">
+                      <tr>
+                      <td colspan="4" style="text-align: center;color: red;font-weight: bold;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;padding: 5px 0;">
+                      	<?php echo $nextMeasurement; ?>
+                      </td>
+					  </tr>
+                      <tr><td colspan="4" height="8px"></td></tr>
+                      <tr>
+                        <td>Start</td>
+                        <td>Now</td>
+                        <td>Lost/Gained</td>
+                        <td>Goal</td>
+                      </tr>
+                      <tr>
+                        <td colspan="6" class="border-top-td"></td>
+                      </tr>
+                      <tr id="weight-Div" >
+                        <td class="pink-txt"><?php echo $initial_weight; ?> kg</td>
+                        <td class="pink-txt"><?php echo $current_weight; ?> kg</td>
+                        <td ><?php echo $weight_diff_txt; ?></td>
+                        <td class="pink-txt"><?php echo $goal_weight; ?> kg</td>
+                      </tr>
+                      <tr>
+                        <td colspan="6" class="border-top-td"></td>
+                      </tr>
+                      <tr>
+                      	<td colspan="6"><?php echo $targetWeightmsg; ?></td>
+                      </tr>
+                       
+                    </table>
+                    </div>
+                    <div class="inner-box-data" style=" margin-left:0; margin-right:0;width:100%; display:block; float:none; margin:0 auto;" id="weight-Table">
+                        <div class="hf-hs-title" style="width:100%;">
+                            <div class="hf-hs-text">Weight Progress Table</div>
+                            <div class="hf-hs-nav">
+                                <div id="hf-wbmt-show" style="display:block;"><a onclick="showHFHSWBDetail('hf-wbmt')">show...
+                               <img src="images/hf-down.png" alt="down" /></a></div>
+                                <div id="hf-wbmt-hide" style="display:none;"><a onclick="hideHFHSDetail('hf-wbmt')">hide...
+                                <img src="images/hf-up.png" alt="up" /></a></div>
+                            </div>
+                        </div>
+                        <div class="inner-box-content" id="hf-wbmt" style="display:none;width:100%;">
+                        	<?php 
+                            	$weightList = getWeightDetails($user_id,$goal_weight);
+                            ?>
+                            <div class="measure-table hsPage">
+                           <table width="100%" >
+                             <tr>
+                                <td style="width:25%;">Date</td>
+                                <td style="width:20%;">Weight</td>
+                                <td style="width:25%;">Difference</td>
+                                <td class="last" style="width:25% !important; min-width:inherit !important;">Goal <span class="blue-txt"><?php echo $goal_weight; ?> kg</span></td>
+                              </tr>
+                              <tr>
+                              <td colspan="4" width="100%">
+                          <?php for($n=0;$n<count($weightList);$n++){ 
+                          		if(count($weightList)>'5'){ 
+                                    $id="id='weight".$n."'";
+                                }else{
+                                    $id="";
+                                }
+                                if($n>4){
+                                    $style="display:none;";    	
+                                }else{
+                                    $style="display:block;";  
+                                }
+                          ?>
+                          	<div <?php echo $id; ?> style="<?php echo $style; ?>">
+                              <table width="100%">
+                              <tr>
+                                <td colspan="4" class="border-top-td" style="width:100%;"></td>
+                              </tr>
+                              <tr >
+                                <td style="width:25%;"><?php echo $weightList[$n]['AddedDate']; ?> </td>
+                                <td style="width:20%;"><?php echo $weightList[$n]['Weight_new']; ?>kg</td>
+                                <td style="width:25%;"><?php echo $weightList[$n]['diff_txt']; ?></td>
+                                <td class="lastTd" style="width:25% !important;min-width:inherit !important;"><?php echo $weightList[$n]['target_txt']; ?></td>
+                              </tr></table>
+                              </div>
+                          <?php } ?>
+                          <?php if(count($weightList)>'5'){ ?>
+                          <div class="weight-more" id="show_more_weight" onclick="viewMoreList('weight')">
+                          <a href="javascript:void(0);" id="" class="buttonlink icon_viewmore">View more...</a></div>
+                          <?php } ?>			
+                          <input type="hidden" name="show_more_count_weight" id="show_more_count_weight" value="4" />
+	  					  <input type="hidden" name="total_count_weight" id="total_count_weight" value="<?php echo count($weightList); ?>" />
+                            </td></tr></table>
+                            </div>
+                     	</div>
+                    </div>
+                    <div class="graph">
+                        <div id="statbox" style="float:left; width:98%;">
+                         <?php echo $stats_box; ?>
+                        </div> 
+                    </div>
+			</div>
+        </div>
+<?php }else{  ?>
+
+<style type="text/css">
+.layout_companytwitterstatus{ float:left; width:100%;}
+.mailcenter_middle {
+border: 1px solid #096;
+margin-left: 0;
+padding: 5px;
+width: 98%;
+position: relative;
+float:left;}
+.cadmc_statistics_search{height:0; text-indent:-1152px;}
+.section_curve {
+color: #2F7895;
+}
+.add-weight-page #mystats td {
+vertical-align: middle;
+}
+#mystats h2 {
+text-transform: uppercase;
+margin-bottom: 0;
+}
+#mystats .userDetailsText {
+border: 1px solid #CCCCCC;
+height: 20px;
+width: 40px;
+}
+#mystats .userDetailsText {
+padding-bottom: 0;
+padding-top: 0;
+margin-right: 2px;
+}
+.layout_companytwitterstatus input[type="text"] {
+float: left;
+padding: 5px;
+}
+.mailcenter_top_middle{ font-size:14px !important;}
+.progress-txt h4.wgt-pgrs{ font-size:18px; margin-top:0;}
+.hs-progress {
+color: #FFFFFF;
+}
+.up-heading{ float:left; margin-top:10px; margin-bottom:-20px}
+#mystats input[type="submit"].addButton{background: #E2E2E2; border:1px solid #9A9A9A; border-radius:4px;width: 30px;}
+#mystats input[type="button"].cancelButton{background: #E2E2E2; border:1px solid #9A9A9A; border-radius:4px;width: 45px;}
+#mystats input[type="submit"], #mystats input[type="reset"], #mystats input[type="button"] {
+background: #E2E2E2; border:1px solid #9A9A9A; border-radius:4px;cursor: pointer;
+float: left;
+height: 22px;
+line-height: 22px;
+margin-right: 2px;
+width: 60px;
+padding-bottom: 3px;
+font-size: 11px;
+}
+.add-measure-buttons input {
+float: none !important;
+margin: 10px 0;
+}
+.add-weight-page .progress-div {
+width: 646px;
+margin: 0 auto;
+margin-bottom: 20px;
+}
+.progress-div {
+text-align: left;
+border: 1px solid #096;
+}
+.hs-progress {
+background: #53C39E;
+color: #FFFFFF;
+margin-bottom: 20px;
+}
+.progress-txt {
+padding: 7px;
+}
+.add-weight-page h4 {
+margin-top: 5px;
+margin-right: 5px;
+}
+.progress-txt h4 {
+margin-bottom: 0; border:none; color:#fff;
+}
+.progress-values {
+padding: 5px;
+background: #53C39E;
+color: #FFF700;
+height: 60px;
+padding-right: 0;
+}
+.layout_companytwitterstatus div {
+display: block; font-size:11px;
+}
+.measure-left {
+float: left;
+width: 160px;
+margin-left:20px
+}
+.progress-values {
+color: #FFF700;
+}
+.progress-val {
+height: 40px;
+width: 120px;
+margin-top:4px;
+}
+.progress-val h1 {
+width: auto;
+font-size: 32px;
+float: left;
+margin-right: 2px;color: #FFF700;
+}
+.progress-val span {
+font-size: 12px;
+font-weight: bold;
+float: left;
+width: 55px;
+line-height: 14px;
+padding-top: 5px; color:#FFF700;
+}
+.progress-type {
+text-align: left;
+width: 95px;
+font-size: 12px;
+}
+.progress-type span {
+margin-right: 10px;color:#FFF700; float:left;
+}
+.progress-type input {
+text-align: left;
+margin-right: 3px;
+vertical-align: text-bottom;
+}
+.measure-right {
+float: left;
+width: 320px;
+}
+.measure-scale {
+width: 300px;
+height: 20px;
+margin-top: 10px;
+border: 1px solid #888888;
+background: #FFFFFF;
+}
+.measure-lines div {
+width: 30px;
+text-align: left;
+float: left;
+height: 6px;
+}
+.measure-lines div.last-div, .measure-no div.last-div {
+width: 1px;
+}
+.measure-no div {
+float: left;
+width: 29.5px;
+color: #FFFFFF;
+}
+.measure-table {
+text-align: left;
+margin-bottom:10px;
+}
+.measure-table .border-top-td {
+padding: 0 !important;
+}
+.hsPage td {
+min-width: 51px;
+}
+.border-top-td {
+border-top: 1px solid #ccc;
+}
+.hsPage td {
+padding: 5px 0 5px 2px;
+min-width: 51px;
+}
+.pink-txt {
+color: #53C39E;
+}
+td.lastTd {
+min-width: 154px;
+}
+.border-right-td {
+border-right: 1px solid #ccc;
+}
+.blue-txt {
+color: #3225E6;
+}
+.red-txt {
+color: red;
+}
+.graph {
+margin-top: 20px;
+margin-left: 5px;
+}
+.add-weight-page .graph h4 {
+margin-left: 25px;
+}
+.graph select {
+float: none;
+width: 110px;
+}
+.layout_companytwitterstatus select {
+border: 1px solid #DEDEDE;
+margin-right: 5px;
+height: 25px;
+padding-top: 2px;
+}
+.chartData {
+border: 1px solid #096;
+height: 150px;
+margin: 10px auto 0;
+width: 500px;
+margin-bottom: 5px;
+}
+.chartData .H1 {
+color: #000000;
+font-family: Arial,Geneva,Verdana,Helvetica,sans-serif;
+font-size: 13px;
+font-style: normal;
+font-variant: normal;
+font-weight: bold;
+line-height: normal;
+text-transform: none;
+text-align:center;
+}
+.layout_companytwitterstatus td{ font-size:11px;}
+.chartData td{ padding-left:5px; color:#000; font-size:11px;font-family:Arial,Geneva,Verdana,Helvetica,sans-serif}
+.kgtxt{ float:none;margin-top:4px;}
+.cur-weight{ height:25px; line-height:25px; background:#FFF; font-size:16px; text-align:center;} 
+.inner-box-data {
+float: left;
+margin: 0 auto;
+width: 492px;
+text-align: left;
+font-size: 12px;
+}
+.hf-hs-title {
+float: left;
+width: 450px;
+background: #53C39E;
+padding: 8px;
+color: #FFFFFF;
+padding-bottom:2px;
+}
+.hf-hs-text {
+float: left;
+color:#FFF;
+}
+.hf-hs-nav {
+float: right;
+vertical-align:top;
+}
+.hf-hs-nav div img{ vertical-align:middle;}.hf-hs-nav div{vertical-align:top;}.hf-hs-nav a {
+color: #FFFFFF;
+vertical-align:top;
+cursor:pointer;
+}
+.hf-hs-nav img {
+height: 20px;
+}
+.inner-box-content {
+float: left;
+width: 710px;
+padding: 10px;
+border: 1px solid #53C39E;
+margin-bottom:5px;
+}
+.profile-item {
+border-bottom: 1px solid #ccc;
+padding-bottom: 8px;
+}
+.inner-box-content .profile-item {
+border-bottom: 0;
+}
+#hf-wbmt table td{text-align: left !important;float: left;}
+.weight-more {
+text-align: right;
+margin-top: 10px;
+}
+</style>
+<?php
+$expect_day = date("Y-m-d H:i:s", mktime(date('H'),date('i'),date('s'), date("m"), date("d")+2, date("y")));
+			$next_entry_date = date("h:i a F j, Y",strtotime($expect_day));
+			$next_update=$next_entry_date;
+?>
+<?php 
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+?>
+<?php
+    function get_time_difference( $start, $end ){
+				
+				$uts['start']      =    strtotime($start);
+				$uts['end']        =    strtotime($end);
+				if( $uts['start']!==-1 && $uts['end']!==-1 )
+				{
+					if( $uts['end'] >= $uts['start'] ) {
+						$diff    =    $uts['end'] - $uts['start'];
+						if( $days=intval((floor($diff/86400))) )
+							$diff = $diff % 86400;
+						if( $hours=intval((floor($diff/3600))) )
+							$diff = $diff % 3600;
+						if( $minutes=intval((floor($diff/60))) )
+							$diff = $diff % 60;
+						$diff    =    intval( $diff );            
+						return( array('days'=>$days, 'hours'=>$hours, 'minutes'=>$minutes, 'seconds'=>$diff) );
+					}
+					else      {
+						return 0;
+					}
+				}
+				else  {
+						return 0;
+				}
+				return 0;
+			}
+    function addslashes_mq($value,$trim=false,$stripsql=false) {
+	if (is_array($value)) {
+		$return=array();
+		while (list($k,$v)=each($value)) {
+			$return[addslashes_mq($k)]=addslashes_mq($v);
+		}
+	} else {
+		if ($trim) {
+			$value=trim($value);
+		}
+		if(get_magic_quotes_gpc() == 0) {
+			$return=addslashes($value);
+		} else {
+			$return=$value;
+		}
+		if ($stripsql) {
+			$return=str_replace('%','\%',$return);
+			$return=str_replace('_','\_',$return);
+		}
+	}
+	return $return;
+	}	
+    function doGetHFMeasurementDetails($user_id){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$Query =mysqli_query($linkhf,"SELECT * FROM  engine4_measurement where user_id='".$user_id."' ");
+		$res =  mysqli_fetch_array($Query);
+		return $res;
+	}
+    function doGetInitialMeasureDetails($user_id){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$Query =mysqli_query($linkhf,"SELECT * FROM engine4_user_addmystats where user_id='".$user_id."' AND is_primary='Yes' LIMIT 1");
+		$res = mysqli_fetch_array($Query);
+		return $res[0];
+	}
+	function doGetCurrentMeasureDetails($user_id){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$Query =mysqli_query($linkhf,"SELECT * FROM engine4_user_addmystats where user_id='".$user_id."' ORDER BY AddedDate DESC LIMIT 1");
+		$res = mysqli_fetch_array($Query);
+		return $res[0];
+	}
+	function removeFirstChar($rtnStr){
+	 $res = substr($rtnStr, 1);
+	 return $res;
+	}
+    function initialWeightDetails($user_id){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+	   $sql="SELECT Weight_start from engine4_user_addmyweight WHERE user_id=$user_id AND is_primary='Yes'";
+		$res=mysqli_query($linkhf,$sql);
+		list($Weight_start)=mysqli_fetch_row($res);
+		return $Weight_start;
+	}
+	function currentWeightDetails($user_id){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+	    $sql="SELECT Weight_new from engine4_user_addmyweight WHERE user_id=$user_id AND is_primary='No' order by AddedDate DESC LIMIT 1";
+        
+		$res=mysqli_query($linkhf,$sql);
+		list($Weight_new)=mysqli_fetch_row($res);
+		if($Weight_new!=''){
+			return $Weight_new;
+		}else{
+		 $res = initialWeightDetails($user_id);
+		 return $res;
+		}
+	}
+    function get_measurement_weight($user_id,$details=''){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$query="SELECT Ident,Weight_new,Weight_start,AddedDate FROM engine4_user_addmyweight WHERE user_id='".$user_id."' ORDER BY Ident ASC";
+		 $res = mysqli_query($linkhf,$query);
+		 $tot = 0;
+		 while($row=mysqli_fetch_array($res))
+		 {
+			if($row['Weight_new']==0 && $row['Weight_start']!=0 ){
+			   $row['Weight_new'] = $row['Weight_start'];
+			   $row[1]=$row['Weight_start'];
+			}
+			$details[]= $row;
+		 }
+		  return $details;
+	}
+    function get_measurement_weight_r($user_id,$details=''){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		       
+        $queryp="SELECT Ident FROM engine4_user_addmyweight WHERE  user_id='".$user_id."' ORDER BY AddedDate DESC LIMIT 12";
+        $resp = mysqli_query($linkhf,$queryp);
+        $identt="";
+        while($roww=mysqli_fetch_array($resp))
+		 {
+         	 $identt.=$roww['Ident'].",";
+         }
+         $Ident=  substr($identt, 0, -1);
+        $query="SELECT Ident,Weight_new,Weight_start,AddedDate FROM engine4_user_addmyweight WHERE Ident In ($Ident) and user_id='".$user_id."' ORDER BY AddedDate ASC LIMIT 12";
+		
+         $res = mysqli_query($linkhf,$query);
+		 $tot = 0;
+		 while($row=mysqli_fetch_array($res))
+		 {
+			if($row['Weight_new']==0 && $row['Weight_start']!=0 ){
+			   $row['Weight_new'] = $row['Weight_start'];
+			   $row[1]=$row['Weight_start'];
+			}
+			$details[]= $row;
+		 }
+		  return $details;
+	}
+    function get_measurement_weight_week($user_id,$details=''){
+    $linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+    
+    $queryp="SELECT Ident FROM `engine4_user_addmyweight` WHERE user_id = '".$user_id."'  GROUP BY Week( AddedDate ) DESC LIMIT 12";
+        $resp = mysqli_query($linkhf,$queryp);
+        $identt="";
+        while($roww=mysqli_fetch_array($resp))
+		 {
+         	 $identt.=$roww['Ident'].",";
+         }
+         $Ident=  substr($identt, 0, -1);
+                
+    	$query="SELECT AVG( Weight_new ) as avg_new , AVG( Weight_start ) as avg_start ,  AddedDate  as week FROM `engine4_user_addmyweight` WHERE user_id = '".$user_id."'  and Ident In ($Ident) GROUP BY Week( AddedDate ) ASC LIMIT 12";
+						  $res = mysqli_query($linkhf,$query);
+						  while($row=mysqli_fetch_array($res)){
+								if($row['avg_new']==0 && $row['avg_start']!=0 ){
+								   $row['avg_new'] = $row['avg_start'];
+								   $row[1]=$row['avg_start'];
+								}
+								$details[]= $row;
+						 }
+					return $details;
+    }
+    function get_measurement_weight_month($user_id,$details=''){
+    	$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+    	$query="SELECT AVG( Weight_new ) as avg_new , AVG( Weight_start ) as avg_start , Month( AddedDate ) as month ,Year(AddedDate) as year FROM `engine4_user_addmyweight` WHERE user_id = '".$user_id."' GROUP BY Month( AddedDate )";
+						  $res = mysqli_query($linkhf,$query);
+						  while($row=mysqli_fetch_array($res)){
+								if($row['avg_new']==0 && $row['avg_start']!=0 ){
+								   $row['avg_new'] = $row['avg_start'];
+								   $row[1]=$row['avg_start'];
+								}
+								$details[]= $row;
+						 }
+		            return $details;
+    }
+    function get_measurement_weight_year($user_id,$details=''){
+    	$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+    	$query="SELECT AVG( Weight_new ) as avg_new , AVG( Weight_start ) as avg_start , Year(AddedDate) as year FROM `engine4_user_addmyweight` WHERE user_id = '".$user_id."' GROUP BY Year( AddedDate )";
+						  $res = mysqli_query($linkhf,$query);
+						  while($row=mysqli_fetch_array($res)){
+								if($row['avg_new']==0 && $row['avg_start']!=0 ){
+								   $row['avg_new'] = $row['avg_start'];
+								   $row[1]=$row['avg_start'];
+								}
+								$details[]= $row;
+						 }
+		            return $details;
+    }
+	function get_a_idealweight($user_id){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$total_results = mysqli_fetch_row(mysqli_query($linkhf,"SELECT ideal_weight_kg_value as idealweight,ideal_weight_lbs_value  FROM engine4_measurement  WHERE user_id=$user_id"));
+		return $total_results[0];
+	}
+    function GetAVG($resAry,$type){
+	  if($resAry){
+	  $count=0;
+	  $totRct = count($resAry);
+	  for($i=0;$i<$totRct;$i++){
+	   $count = $count + $resAry[$i][$type];
+	  }
+	  if($totRct!=''){
+	  	$AVG = $count/$totRct;
+	  	return $AVG;
+	  }
+	  }else{
+	  	return "0";
+	  }
+	}
+	function build_a_chart_new($details,$WeightAVG,$xaxis='',$yaxis=''){ 
+	  $graphStr ='';
+	  $graphStr.= "[";
+	   if($details!=''){
+	  $cntRecords = count($details);
+	  
+      if($WeightAVG!=""){
+      	$graphStr.= "['Date','Date Added','Goal'],"; 
+      }
+      if($cntRecords>12){
+      	$cntRecords=12;
+      }
+	  for($i=0;$i<$cntRecords;$i++){ 
+	      $added_date = date('d/m',strtotime($details[$i]['AddedDate']));
+          if($details[$i]['Weight_new']!=""){
+          	$graphStr.= "['".$added_date."',".$details[$i]['Weight_new'].",".$WeightAVG."]";
+          }else{
+          	$graphStr.= "['".$added_date."',".$details[$i]['Weight_start'].",".$WeightAVG."]";
+          }
+		  
+          if($i<($cntRecords-1)){
+          	$graphStr.=",";
+          }
+	  }
+	     
+	  $graphStr.="]";
+	  return $graphStr;
+	  }
+	}
+    function build_a_chart_new_week($details,$WeightAVG,$xaxis='',$yaxis=''){ 
+	  $graphStr ='';
+	  $graphStr.= "[";
+	   if($details!=''){
+	  $cntRecords = count($details);
+	  
+      if($WeightAVG!=""){
+      	$graphStr.= "['Date','Week Number','Goal'],";  
+      } 
+      if($cntRecords>12){
+      	$cntRecords=12;
+      }  
+	  for($i=0;$i<$cntRecords;$i++){ 
+	     $added_date = date('d/m',strtotime($details[$i]['week']));
+          if($details[$i]['avg_start']!="" && $details[$i]['avg_start']!="0"){
+          	$graphStr.= "['".$added_date."',".$details[$i]['avg_start'].",".$WeightAVG."]";
+          }else{
+          	$graphStr.= "['".$added_date."',".$details[$i]['avg_new'].",".$WeightAVG."]";
+          }
+		  
+          if($i<($cntRecords-1)){
+          	$graphStr.=",";
+          }
+	  }
+	     
+	  $graphStr.="]";
+	  return $graphStr;
+	  }
+	}
+    function getMonths($searchKey){
+	 $months = array(1 => 'Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'); 
+	  foreach($months as $key => $value){
+		 if($key==$searchKey){
+		   return $value;
+		 }
+	  }
+	}
+    function build_a_chart_new_month($details,$WeightAVG,$xaxis='',$yaxis='',$field=''){ 
+	  $graphStr ='';
+	  $graphStr.= "[";
+	   if($details!=''){
+	  $cntRecords = count($details);
+	  
+      if($WeightAVG!=""){
+      	$graphStr.= "['Months','Months (average)','Goal'],"; 
+      }
+      if($cntRecords>12){
+      	$cntRecords=12;
+      }
+	  for($i=0;$i<$cntRecords;$i++){ 
+         // $xserious_value = getMonths($details[$i]['month']).' '.$details[$i]['year'];
+          $xserious_value = getMonths($details[$i]['month']);
+            $graphStr.= "['".$xserious_value."',".round($details[$i][$field],2).",".$WeightAVG."]";
+          		  
+          if($i<($cntRecords-1)){
+          	$graphStr.=",";
+          }
+	  }
+	     
+	  $graphStr.="]";
+	  return $graphStr;
+	  }
+	}
+    function build_a_chart_new_year($details,$WeightAVG,$xaxis='',$yaxis='',$field=''){ 
+	  $graphStr ='';
+	  $graphStr.= "[";
+	   if($details!=''){
+	  $cntRecords = count($details);
+	  
+      if($WeightAVG!=""){
+      	$graphStr.= "['Years','Years (average)','Goal'],"; 
+      } 
+      if($cntRecords>12){
+      	$cntRecords=12;
+      }
+	  for($i=0;$i<$cntRecords;$i++){ 
+            $graphStr.= "['".$details[$i]['year']."',".round($details[$i][$field],2).",".$WeightAVG."]";
+          		  
+          if($i<($cntRecords-1)){
+          	$graphStr.=",";
+          }
+	  }
+	     
+	  $graphStr.="]";
+	  return $graphStr;
+	  }
+	}
+    
+    function build_a_chart($details,$WeightAVG,$xaxis='',$yaxis=''){ 
+	  if($details!=''){
+	  if($xaxis==''){
+  	     $xaxis ='Days';
+	  }
+	  if($yaxis==''){
+	    $yaxis ="Weight";
+	  }
+	  if($yaxis =="Weight"){
+	   $desc =  "description= ' Kg'";
+	  }else{
+	   $desc =  "description= ' Cm'";
+	  }
+	  $graphStr ='';
+	  $graphStr.= "<chart><series>";
+	   if($details!=''){
+	  $cntRecords = count($details);
+	  
+	  for($i=0;$i<$cntRecords;$i++){  // for loop for  build serious tag <serious> <value xid='0'>10/27/10</value>...</serious>
+	      $added_date = date('d/m',strtotime($details[$i]['AddedDate']));
+		  $graphStr.= "<value xid='".$i."'>$added_date</value>";
+	  }
+	     $graphStr.= "</series><labels><label lid='1'><x></x><y>190</y><rotate>true</rotate><text_size>10</text_size><text_color>#000000</text_color><align>left</align><text><![CDATA[<b>$yaxis</b>]]></text></label><label lid='2'><x>300</x><y>375</y><text_size>10</text_size><text_color>#000000</text_color><align>left</align><text><![CDATA[<b>$xaxis</b>]]></text></label></labels><graphs> <graph gid='0'>";
+	   $dataStr ='';
+	   for($i=0;$i<$cntRecords;$i++){  // for loop for build graph and their data tags
+	  	   $results = $details[$i][1];
+		   $graphStr.="<value xid='".$i."' $desc>$results</value>";
+	  }
+	   $graphStr.="</graph>";
+	   $graphStr.= "<graph gid='1'>";
+	   for($i=0;$i<$cntRecords;$i++){  // for loop for build graph and their second set of values for goal value
+	    $graphStr.="<value xid='".$i."' $desc>$WeightAVG</value>";
+	  }
+	  }
+	  $graphStr.="</graph></graphs></chart>";
+	  return $graphStr;
+	  }
+	}
+    function array_sort($array, $on, $sortorder)
+{
+    $new_array = array();
+    $sortable_array = array();
+
+	if(!empty($array)){
+    if (count($array) > 0) {
+        foreach ($array as $k => $v) {
+            if (is_array($v)) {
+                foreach ($v as $k2 => $v2) {
+                    if ($k2 == $on) {
+                        $sortable_array[$k] = $v2;
+                    }
+                }
+            } else {
+                $sortable_array[$k] = $v;
+            }
+        }
+        
+        switch ($sortorder) {
+            case 'SORT_ASC':
+                asort($sortable_array);
+            break;
+            case 'SORT_DESC':
+                arsort($sortable_array);
+            break;
+        }
+
+        foreach ($sortable_array as $k => $v) {
+            $new_array[] = $array[$k];
+        }
+    }
+	}
+    return $new_array;
+}
+function doGetUserBodyGoalDetails($user_id){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$Query =mysqli_query($linkhf,"SELECT * FROM engine4_user_addmystats where user_id='".$user_id."' AND gChest!='' AND gChest!='0' ORDER BY AddedDate DESC LIMIT 1");
+		$res = mysqli_fetch_array($Query);
+		return $res[0];
+	}
+	function doUpdateMyGoalDetail($objArray){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+		$goalWeightDetails=doGetHFMeasurementDetails($objArray['user_id']);
+				
+		if($goalWeightDetails['id']!=''){
+			$WhereClause = " Where id='".$goalWeightDetails['id']."' ";
+			mysqli_query($linkhf,"UPDATE engine4_measurement SET ideal_weight_type = 1, ideal_weight_kg_value = '".$objArray['frmGWeight']."' Where id='".$goalWeightDetails['id']."'");
+		}else{
+			$query=mysqli_query($linkhf,"INSERT INTO engine4_measurement(ideal_weight_type,ideal_weight_kg_value,user_id)
+                                                VALUES('1','".$objArray['frmGWeight']."','".$objArray['user_id']."') ");
+		}
+		$strURL="http://www.busyfriends.com/pages/add-your-weight";
+        header("location:".$strURL);
+        exit();
+	}
+    function getPreviousWeight($user_id,$Ident){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+    	$sql=mysqli_query($linkhf,"SELECT Weight_new,Weight_start from engine4_user_addmyweight WHERE Ident < $Ident AND user_id=$user_id ORDER BY Ident DESC LIMIT 1");
+    	$res=mysqli_fetch_array($sql);
+        return $res;
+    }
+    function getWeightDetails($user_id,$GoalWeight){
+$linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+    	$sql=mysqli_query($linkhf,"SELECT * from engine4_user_addmyweight WHERE user_id=$user_id ORDER BY AddedDate DESC");
+        while($row=mysqli_fetch_array($sql))
+		 {
+         	$row['AddedDate']=date('d S F Y',strtotime($row['AddedDate']));
+            if($row['Weight_new']=="" || $row['Weight_new']=="0" ){
+            	$row['Weight_new']=$row['Weight_start'];
+                $row['diff_txt']="Initial Weight";
+            }
+            
+            $previousWeights=getPreviousWeight($user_id,$row['Ident']);
+            if($previousWeights['Weight_new']=="" || $previousWeights['Weight_new']=="0" ){
+                $previous_weight=$previousWeights['Weight_start'];
+            }else{
+                $previous_weight=$previousWeights['Weight_new'];
+            }
+//print "pw->".$previous_weight."--wnew:".$row['Weight_new']."--";
+           	$diffWeight=$previous_weight-$row['Weight_new'];
+            if($row['diff_txt']==""){
+                 if($diffWeight<0){
+                    $row['diff_txt']="<span class='blue-txt'>Gained ".abs($diffWeight)." kg</span>";
+                 }else if($diffWeight>0){
+                    $row['diff_txt']="<span class='red-txt'>Lost ".abs($diffWeight)." kg</span>";
+                 }else{
+                    $row['diff_txt']="<span class='black-txt'>No Change</span>";
+                 }
+            }
+            $targetWeight=$GoalWeight-$row['Weight_new'];
+			 if($targetWeight>0){
+				$row['target_txt']="<span class='blue-txt'>Gain ".abs($targetWeight)." kg</span>";
+			 }else if($targetWeight<0){
+				$row['target_txt']="<span class='red-txt'>Lose ".abs($targetWeight)." kg</span>";
+			 }else{
+				$row['target_txt']="<span class='black-txt'>Target Achieved</span>";
+			 }
+			$details[]= $row;
+		 }
+        return $details;
+    }
+?>
+<?php
+            $user_id=Engine_Api::_()->user()->getViewer()->getIdentity();
+            $myuser_id=$user_id;
+			            
+            $expect_day = date("Y-m-d H:i:s", mktime(date('H'),date('i'),date('s'), date("m"), date("d")+2, date("y")));
+			$next_entry_date = date("h:i a F j, Y",strtotime($expect_day));
+			$next_update=$next_entry_date; 
+			$query="SELECT * FROM engine4_user_addmyweight WHERE user_id='".$myuser_id."' AND is_primary='No' order by AddedDate DESC LIMIT 1 ";
+			$res=mysqli_query($linkhf,$query);
+			$result_Ary=mysqli_fetch_row($res);
+			$result['ident']=$result_Ary[0];
+			$result['user_id']=$result_Ary[1];
+			$result['Weight_new']=$result_Ary[2];
+			if($result_Ary[4]!=''){
+				$result['added_date']=date("F j, Y",strtotime($result_Ary[4]));
+			if($result['ident']!=''){
+				 $hlink = 'javascript:void()';
+				 $clickeve ="weight_popup()";			
+				 $link = "<a href= $hlink onclick=$clickeve>";
+				 $weight_popup=$link;
+				 $graph='View your Weight Graph';
+			}}
+			 if($result['Weight_new']==''){
+				  $query="SELECT * FROM engine4_user_addmyweight WHERE user_id='".$myuser_id."' AND is_primary='Yes' ";
+				 $res=mysqli_query($linkhf,$query);
+				   $result_Ary=mysqli_fetch_row($res);
+					$result['ident']=$result_Ary[0];
+					$result['user_id']=$result_Ary[1];
+					$result['Weight_new']=$result_Ary[3];
+            		if($result_Ary[4]!=''){ 
+						$result['added_date']=date("F j, Y",strtotime($result_Ary[4]));
+					}
+			  }
+			 $memberresult[]=$result;
+				$ini_query="SELECT Ident,Weight_start,AddedDate FROM engine4_user_addmyweight WHERE user_id='".$myuser_id."' AND is_primary='Yes'";		
+				$ini_res=mysqli_query($linkhf,$ini_query);
+				list($Ident,$Weight_start,$AddedDate)=mysqli_fetch_row($ini_res);
+				$initial_weight=$Weight_start;
+				if($AddedDate!=''){
+			 		 $iniDate  = date("F j, Y",strtotime($AddedDate));
+					 $ini_date ="Your initial weight was recorded on ".$iniDate;
+				 }else{
+					 $ini_date ="No Initial Weight added";
+				 }  
+				$initial_date=$ini_date;
+			$sql= "select Ident,user_id,AddedDate  from engine4_user_addmyweight  WHERE user_id='".$myuser_id."' order by AddedDate  DESC LIMIT 1 ";
+			$fitnes_res=mysqli_query($linkhf,$sql);
+			list($Ident,$user_id,$CAddedDate)=mysqli_fetch_row($fitnes_res);
+
+			if($CAddedDate!=''){
+				$enddate   = date("Y-m-d H:i:s");
+				$date_diff = get_time_difference($CAddedDate,$enddate); 
+				if($date_diff['days']< 2  ){ 
+					  $cAdded=date("Y-m-d H:i:s",strtotime($CAddedDate));
+			 		  $cDate  =date("jS F, Y ",strtotime($CAddedDate));
+                      $week_popup='alert("YOU CAN ONLY ADD YOUR WEIGHT ONCE A DAY\n\nTHE NEXT TIME YOU CAN ADD YOUR WEIGHT WILL BE\nON OR AFTER '.date("h:i a F j, Y",strtotime("2 days", strtotime($CAddedDate))).'")
+					 return false;';
+					$bft_week=$week_popup;
+				}
+				$nextMeasurement='YOU CAN ADD YOUR NEXT WEIGHT ON OR AFTER  - '.date("h:i a F j, Y ",strtotime("2 days", strtotime($CAddedDate)));
+			}else{
+				$nextMeasurement='YOU NEED TO ADD YOUR INITIAL WEIGHT';
+			}
+			if($CAddedDate!=''){
+			   $cAdded=date("Y-m-d H:i:s",strtotime($CAddedDate));
+			   $cDate  = date("F j, Y",strtotime($CAddedDate));
+			   $added_date = "Your current weight was last recorded on ".$cDate;
+			}else{
+			   $added_date = "No Current Weight added";
+			}
+			
+			if(isset($_REQUEST['add'])){
+                $linkhf = mysqli_connect("busyfriends.cjycx9jidr5o.us-east-1.rds.amazonaws.com", "busyfriendssite", "HaqwRivC35!ms", "friends_site_bold");
+                if ($linkhf->connect_error) {
+                   die("Connection failed: " . $linkhf->connect_error);
+                } 
+                $sql="SELECT count(*)as total FROM engine4_user_addmyweight WHERE user_id=$myuser_id";
+                $fitnes_res=mysqli_query($linkhf,$sql);
+                //print "<pre>";print_r($fitnes_res);
+                $Weight_new=addslashes_mq($_REQUEST['myweight']);
+                list($total_count)=mysqli_fetch_row($fitnes_res);				
+                if($total_count>=1){
+                    $is_primary = 'No';
+                    $queryrr="INSERT INTO engine4_user_addmyweight(user_id,Weight_new,AddedDate,Status,is_primary)
+                                                VALUES('$myuser_id','$Weight_new',now(),'Active','$is_primary') ";
+                }else{
+                    $is_primary = 'Yes';
+                    $queryrr="INSERT INTO engine4_user_addmyweight(user_id,Weight_start,AddedDate,Status,is_primary)
+                                                VALUES('$myuser_id','$Weight_new',now(),'Active','$is_primary') ";
+                }
+                
+                $ress=mysqli_query($linkhf,$queryrr);
+               
+                $Queryy =mysqli_query($linkhf,"SELECT id FROM  engine4_measurement where user_id='".$myuser_id."' ");
+                $result = mysqli_fetch_array($Queryy);
+         		mysqli_query($linkhf,"UPDATE engine4_measurement SET cur_weight_type = '1', cur_weight_kg_value = '$Weight_new' Where id='".$result[0]['id']."'");
+				//$insertid=$this->doInsertMyWeightDetail($_REQUEST);
+                $strURL="http://www.busyfriends.com/pages/add-your-weight";
+                header("location:".$strURL);
+                exit();
+			}
+			$goalWeightDetails=doGetHFMeasurementDetails($myuser_id);
+           
+			if($goalWeightDetails['ideal_weight_type']=='2'){
+			    $idealLbsFromStone=$goalWeightDetails['ideal_weight_kg_value']*'14';
+				$idealLbsValue=$idealLbsFromStone+$goalWeightDetails['ideal_weight_lbs_value'];
+				$idealKgValue=$idealLbsValue/'2.20462262';
+			}else if($goalWeightDetails['ideal_weight_type']=='1'){
+				$idealLbsValue=$goalWeightDetails['ideal_weight_kg_value']*'2.20462262';
+				$idealKgValue=$goalWeightDetails['ideal_weight_kg_value'];
+			}else if($goalWeightDetails['ideal_weight_type']=='3'){
+				$idealKgValue=$goalWeightDetails['ideal_weight_lbs_value']/'2.20462262';
+				$idealLbsValue=$goalWeightDetails['ideal_weight_lbs_value'];
+			}
+			  $user_id =$myuser_id;
+			  $progress="My";
+			 
+             $today=getdate(time());
+			 
+			$strInitialDetails=doGetInitialMeasureDetails($user_id);
+			$strCurrentDetails=doGetCurrentMeasureDetails($user_id);
+			$strProgressDetail=array();
+			if(empty($strCurrentDetails['LeftFoream_new']) && $strCurrentDetails['is_primary']=='Yes'){
+				 $strCurrentDetails['LeftFoream_new']=$strInitialDetails['LeftFoream_start'];
+				$strCurrentDetails['LeftBicep_new']=$strInitialDetails['LeftBicep_start'];
+				$strCurrentDetails['RightFoream_new']=$strInitialDetails['RightFoream_start'];
+				$strCurrentDetails['RightBicep_new']=$strInitialDetails['RightBicep_start'];
+				$strCurrentDetails['Neck_new']=$strInitialDetails['Neck_start'];
+				$strCurrentDetails['Chest_new']=$strInitialDetails['Chest_start'];
+				$strCurrentDetails['Waist_new']=$strInitialDetails['Waist_start'];
+				$strCurrentDetails['Hips_new']=$strInitialDetails['Hips_start'];
+				$strCurrentDetails['LeftThigh_new']=$strInitialDetails['LeftThigh_start'];
+				$strCurrentDetails['RightThigh_new']=$strInitialDetails['RightThigh_start'];
+				$strCurrentDetails['LeftCalf_new']=$strInitialDetails['LeftCalf_start'];
+				$strCurrentDetails['RightCalf_new']=$strInitialDetails['RightCalf_start'];
+			}
+			$strProgressDetail['LeftFoream']=$strCurrentDetails['gLeftFoream']-$strCurrentDetails['LeftFoream_new'];
+			$strProgressDetail['RightFoream']=$strCurrentDetails['gRightFoream']-$strCurrentDetails['RightFoream_new'];
+			$strProgressDetail['LeftBicep']=$strCurrentDetails['gLeftBicep']-$strCurrentDetails['LeftBicep_new'];
+			$strProgressDetail['RightBicep']=$strCurrentDetails['gRightBicep']-$strCurrentDetails['RightBicep_new'];
+			$strProgressDetail['Neck']=$strCurrentDetails['gNeck']-$strCurrentDetails['Neck_new'];
+			$strProgressDetail['Chest']=$strCurrentDetails['gChest']-$strCurrentDetails['Chest_new'];
+			$strProgressDetail['Waist']=$strCurrentDetails['gWaist']-$strCurrentDetails['Waist_new'];
+			$strProgressDetail['Hips']=$strCurrentDetails['gHips']-$strCurrentDetails['Hips_new'];
+			$strProgressDetail['LeftThigh']=$strCurrentDetails['gLeftThigh']-$strCurrentDetails['LeftThigh_new'];
+			$strProgressDetail['RightThigh']=$strCurrentDetails['gRightThigh']-$strCurrentDetails['RightThigh_new'];
+			$strProgressDetail['LeftCalf']=$strCurrentDetails['gLeftCalf']-$strCurrentDetails['LeftCalf_new'];
+			$strProgressDetail['RightCalf']=$strCurrentDetails['gRightCalf']-$strCurrentDetails['RightCalf_new'];
+			
+			$strProgressDetailMsg=array();
+			if($strProgressDetail['LeftFoream']>0){
+				$strProgressDetailMsg['LeftFoream']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['LeftFoream'])." cm</span>";
+			}else if($strProgressDetail['LeftFoream']<0){
+				$strProgressDetailMsg['LeftFoream']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['LeftFoream'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['LeftFoream']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['RightFoream']>0){
+				$strProgressDetailMsg['RightFoream']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['RightFoream'])." cm</span>";
+			}else if($strProgressDetail['RightFoream']<0){
+				$strProgressDetailMsg['RightFoream']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['RightFoream'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['RightFoream']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['LeftBicep']>0){
+				$strProgressDetailMsg['LeftBicep']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['LeftBicep'])." cm</span>";
+			}else if($strProgressDetail['LeftBicep']<0){
+				$strProgressDetailMsg['LeftBicep']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['LeftBicep'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['LeftBicep']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['RightBicep']>0){
+				$strProgressDetailMsg['RightBicep']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['RightBicep'])." cm</span>";
+			}else if($strProgressDetail['RightBicep']<0){
+				$strProgressDetailMsg['RightBicep']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['RightBicep'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['RightBicep']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['Neck']>0){
+				$strProgressDetailMsg['Neck']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['Neck'])." cm</span>";
+			}else if($strProgressDetail['Neck']<0){
+				$strProgressDetailMsg['Neck']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['Neck'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['Neck']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['Chest']>0){
+				$strProgressDetailMsg['Chest']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['Chest'])." cm</span>";
+			}else if($strProgressDetail['Chest']<0){
+				$strProgressDetailMsg['Chest']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['Chest'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['Chest']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['Waist']>0){
+				$strProgressDetailMsg['Waist']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['Waist'])." cm</span>";
+			}else if($strProgressDetail['Waist']<0){
+				$strProgressDetailMsg['Waist']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['Waist'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['Waist']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['Hips']>0){
+				$strProgressDetailMsg['Hips']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['Hips'])." cm</span>";
+			}else if($strProgressDetail['Hips']<0){
+				$strProgressDetailMsg['Hips']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['Hips'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['Hips']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['LeftThigh']>0){
+				$strProgressDetailMsg['LeftThigh']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['LeftThigh'])." cm</span>";
+			}else if($strProgressDetail['LeftThigh']<0){
+				$strProgressDetailMsg['LeftThigh']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['LeftThigh'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['LeftThigh']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['RightThigh']>0){
+				$strProgressDetailMsg['RightThigh']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['RightThigh'])." cm</span>";
+			}else if($strProgressDetail['RightThigh']<0){
+				$strProgressDetailMsg['RightThigh']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['RightThigh'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['RightThigh']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['LeftCalf']>0){
+				$strProgressDetailMsg['LeftCalf']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['LeftCalf'])." cm</span>";
+			}else if($strProgressDetail['LeftCalf']<0){
+				$strProgressDetailMsg['LeftCalf']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['LeftCalf'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['LeftCalf']="<span class='black-txt'>Target Achieved</span>";
+			}
+			
+			if($strProgressDetail['RightCalf']>0){
+				$strProgressDetailMsg['RightCalf']="<span class='blue-txt'>You need to increase by ".abs($strProgressDetail['RightCalf'])." cm</span>";
+			}else if($strProgressDetail['RightCalf']<0){
+				$strProgressDetailMsg['RightCalf']="<span class='red-txt'>You need to decrease by ".abs($strProgressDetail['RightCalf'])." cm</span>";
+			}else{
+				$strProgressDetailMsg['RightCalf']="<span class='black-txt'>Target Achieved</span>";
+			}
+		 
+			$strProgressDetail=$strProgressDetailMsg;
+			
+			$strDiffDetails=array();
+			
+			$leftForeamDiff=$strCurrentDetails['LeftFoream_new']-$strInitialDetails['LeftFoream_start'];
+			if($leftForeamDiff>0){
+				$strDiffDetails['LeftFoream']="<span class='red-txt'>".$leftForeamDiff." cm larger<span>";
+			}else if($leftForeamDiff<0){
+				$strDiffDetails['LeftFoream']="<span class='blue-txt'>".removeFirstChar($leftForeamDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['LeftFoream']="<span class='green-txt'>No Change<span>";
+			}
+			$LeftBicepDiff=$strCurrentDetails['LeftBicep_new']-$strInitialDetails['LeftBicep_start'];
+			if($LeftBicepDiff>0){
+				$strDiffDetails['LeftBicep']="<span class='red-txt'>".$LeftBicepDiff." cm larger<span>";
+			}else if($leftForeamDiff<0){
+				$strDiffDetails['LeftBicep']="<span class='blue-txt'>".removeFirstChar($LeftBicepDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['LeftBicep']="<span class='green-txt'>No Change<span>";
+			}
+			$RightForeamDiff=$strCurrentDetails['RightFoream_new']-$strInitialDetails['RightFoream_start'];
+			if($RightForeamDiff>0){
+				$strDiffDetails['RightFoream']="<span class='red-txt'>".$RightForeamDiff." cm larger<span>";
+			}else if($RightForeamDiff<0){
+				$strDiffDetails['RightFoream']="<span class='blue-txt'>".removeFirstChar($RightForeamDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['RightFoream']="<span class='green-txt'>No Change<span>";
+			}
+			$RightBicepDiff=$strCurrentDetails['RightBicep_new']-$strInitialDetails['RightBicep_start'];
+			if($RightBicepDiff>0){
+				$strDiffDetails['RightBicep']="<span class='red-txt'>".$RightBicepDiff." cm larger<span>";
+			}else if($RightBicepDiff<0){
+				$strDiffDetails['RightBicep']="<span class='blue-txt'>".removeFirstChar($RightBicepDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['RightBicep']="<span class='green-txt'>No Change<span>";
+			}
+			$NeckDiff=$strCurrentDetails['Neck_new']-$strInitialDetails['Neck_start'];
+			if($NeckDiff>0){
+				$strDiffDetails['Neck']="<span class='red-txt'>".$NeckDiff." cm larger<span>";
+			}else if($NeckDiff<0){
+				$strDiffDetails['Neck']="<span class='blue-txt'>".removeFirstChar($NeckDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['Neck']="<span class='green-txt'>No Change<span>";
+			}
+			$ChestDiff=$strCurrentDetails['Chest_new']-$strInitialDetails['Chest_start'];
+			if($ChestDiff>0){
+				$strDiffDetails['Chest']="<span class='red-txt'>".$ChestDiff." cm larger<span>";
+			}else if($ChestDiff<0){
+				$strDiffDetails['Chest']="<span class='blue-txt'>".removeFirstChar($ChestDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['Chest']="<span class='green-txt'>No Change<span>";
+			}
+			$WaistDiff=$strCurrentDetails['Waist_new']-$strInitialDetails['Waist_start'];
+			if($WaistDiff>0){
+				$strDiffDetails['Waist']="<span class='red-txt'>".$WaistDiff." cm larger<span>";
+			}else if($WaistDiff<0){
+				$strDiffDetails['Waist']="<span class='blue-txt'>".removeFirstChar($WaistDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['Waist']="<span class='green-txt'>No Change<span>";
+			}
+			$HipsDiff=$strCurrentDetails['Hips_new']-$strInitialDetails['Hips_start'];
+			if($HipsDiff>0){
+				$strDiffDetails['Hips']="<span class='red-txt'>".$HipsDiff." cm larger<span>";
+			}else if($HipsDiff<0){
+				$strDiffDetails['Hips']="<span class='blue-txt'>".removeFirstChar($HipsDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['Hips']="<span class='green-txt'>No Change<span>";
+			}
+			$LeftThighDiff=$strCurrentDetails['LeftThigh_new']-$strInitialDetails['LeftThigh_start'];
+			if($LeftThighDiff>0){
+				$strDiffDetails['LeftThigh']="<span class='red-txt'>".$LeftThighDiff." cm larger<span>";
+			}else if($LeftThighDiff<0){
+				$strDiffDetails['LeftThigh']="<span class='blue-txt'>".removeFirstChar($LeftThighDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['LeftThigh']="<span class='green-txt'>No Change<span>";
+			}
+			$RightThighDiff=$strCurrentDetails['RightThigh_new']-$strInitialDetails['RightThigh_start'];
+			if($RightThighDiff>0){
+				$strDiffDetails['RightThigh']="<span class='red-txt'>".$RightThighDiff." cm larger<span>";
+			}else if($RightThighDiff<0){
+				$strDiffDetails['RightThigh']="<span class='blue-txt'>".removeFirstChar($RightThighDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['RightThigh']="<span class='green-txt'>No Change<span>";
+			}
+			$LeftCalfDiff=$strCurrentDetails['LeftCalf_new']-$strInitialDetails['LeftCalf_start'];
+			if($LeftCalfDiff>0){
+				$strDiffDetails['LeftCalf']="<span class='red-txt'>".$LeftCalfDiff." cm larger<span>";
+			}else if($LeftCalfDiff<0){
+				$strDiffDetails['LeftCalf']="<span class='blue-txt'>".removeFirstChar($LeftCalfDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['LeftCalf']="<span class='green-txt'>No Change<span>";
+			}
+			$RightCalfDiff=$strCurrentDetails['RightCalf_new']-$strInitialDetails['RightCalf_start'];
+			if($RightCalfDiff>0){
+				$strDiffDetails['RightCalf']="<span class='red-txt'>".$RightCalfDiff." cm larger<span>";
+			}else if($RightCalfDiff<0){
+				$strDiffDetails['RightCalf']="<span class='blue-txt'>".removeFirstChar($RightCalfDiff)." cm smaller<span>";
+			}else{
+				$strDiffDetails['RightCalf']="<span class='green-txt'>No Change<span>";
+			}
+						
+			 $initial_weight = initialWeightDetails($user_id);
+			 $weight_new = currentWeightDetails($user_id);
+			 if($weight_new!=''){
+					$Weight_newlbs = round($weight_new*2.20462262,2);
+					$weight_diff    = $weight_new - $initial_weight;
+					$Weight_difflbs =  round($weight_diff*2.20462262,2);
+			 }
+			 $initial_weightLBS =round($initial_weight*2.20462262,2);
+			$initial_weight=$initial_weight;
+			$initial_weightLBS=$initial_weightLBS;			
+			if($weight_diff<0){
+				$Str1= '<strong><div style="color:#339900; font-size:13px;"> Your Current Weight is '.$weight_new.'Kg ('.$Weight_newlbs.'lbs)';
+				$Str.= '<strong><div style="color:#0000ff; font-size:13px;"> You have Lost '.abs($weight_diff).'Kg ('.abs($Weight_difflbs).'lbs)';
+				$weight_diff_txt="<span class='blue-txt'>".removeFirstChar($weight_diff)." kg lost<span>";
+			}else if($weight_diff>0){
+				 $Str1= '<strong><div style="color:#339900; font-size:13px;"> Your Current Weight is '.$weight_new.'Kg ('.$Weight_newlbs.'lbs)';
+				 $Str= '<strong><div style="color:#FF0000; font-size:13px;"> Your Weight has Increased by '.$weight_diff.'Kg ('.$Weight_difflbs.'lbs)';
+				 $weight_diff_txt="<span class='red-txt'>".$weight_diff." kg gained<span>";
+			}else{
+				$Str= '<strong><div style="color:#54B532; font-size:13px;">Your Weight has not changed </div></strong>';
+				$Str1='';
+				$weight_diff_txt="<span class='green-txt'>No Change<span>";
+			}
+			$initial_weight=$initial_weight;
+			$current_weight=$weight_new;
+			$weight_diff_txt=$weight_diff_txt;
+			$weight_msg=$Str;
+			$currentweight_msg=$Str1;
+			 $myuser_id=$user_id;
+			 $weightmeasurementAry  = get_measurement_weight($user_id); 
+			 $avg_type ="Weight_new";
+			 
+			 $GoalWeight =get_a_idealweight($myuser_id);
+			 $goal_weight=$GoalWeight;
+			 $targetWeight=$GoalWeight-$weight_new;
+			 if($targetWeight>0){
+				$targetWeightmsg="<span class='blue-txt'>You need to gain ".abs($targetWeight)." kg</span>";
+			 }else if($targetWeight<0){
+				$targetWeightmsg="<span class='red-txt'>You need to lose ".abs($targetWeight)." kg</span>";
+			 }else{
+				$targetWeightmsg="<span class='black-txt'>Target Achieved</span>";
+			 }
+			 $target_weight=$targetWeight;
+			 $targetWeightmsg=$targetWeightmsg;
+			 $build_chart = build_a_chart($weightmeasurementAry,$GoalWeight);
+             $weightmeasurementAryr  = get_measurement_weight_r($user_id); 
+			$gchartdata = build_a_chart_new($weightmeasurementAryr,$GoalWeight);
+                        
+            $weightmeasurement_week  = get_measurement_weight_week($user_id);
+            //print "<pre>";print_r($weightmeasurement_week);  
+			$gchartdata_week = build_a_chart_new_week($weightmeasurement_week,$GoalWeight);
+            
+            $weightmeasurement_month  = get_measurement_weight_month($user_id); 
+			$gchartdata_month = build_a_chart_new_month($weightmeasurement_month,$GoalWeight,'month','Your Weight in Kg','avg_new');
+            
+         	$weightmeasurement_year  = get_measurement_weight_year($user_id); 
+			$gchartdata_year = build_a_chart_new_year($weightmeasurement_year,$GoalWeight,'year','Your Weight in Kg','avg_new');
+            
+			 $WeightAVG = GetAVG($weightmeasurementAry,$myuser_id);
+		   
+			 $chart_data =$build_chart;
+			 $lossgain = $weight_new - $initial_weight;
+			 $aryMinValue         = array_sort($weightmeasurementAry,'Weight_new',$sortorder='SORT_ASC');
+			 $minValue            = $aryMinValue[0]['Weight_new'];
+			 $aryMaxValue         = array_sort($weightmeasurementAry,'Weight_new',$sortorder='SORT_DESC');
+			 $maxValue            = $aryMaxValue[0]['Weight_new'];
+			 
+			 $WeightAVG=($maxValue+$minValue)/2;
+		if($lossgain>0){ 
+          	$txtlg="Gained"; 
+          }else{ 
+          	$txtlg="Lost"; 
+          }
+			$stats_box ='<table cellspacing="2" cellpadding="3" border="0" bgcolor="#FBD68A" align="center" width="70%" class="chartData">
+							<tbody><tr><td align="center" class="H1" colspan="5">Weight Stats</td></tr>
+							<tr><td width="3%" class="tdBlue">&nbsp;</td><td width="25%" class="tdBlue">Starting Weight:</td><td width="15%" class="tdBlue">'.round($initial_weight).' Kg</td><td width="25%" class="tdBlue">Current Weight:</td><td width="15%" class="tdBlue">'.round($weight_new).' Kg</td></tr>
+							<tr><td width="3%" class="tdBlue">&nbsp;</td><td width="25%" class="tdBlue">Lowest Weight:</td><td width="15%" class="tdBlue">'.round($minValue).' Kg</td><td width="25%" class="tdBlue">Highest Weight:</td><td width="15%" class="tdBlue">'.round($maxValue).' Kg</td></tr>
+							<tr><td width="3%" class="tdBlue">&nbsp;</td><td width="25%" class="tdBlue">Average Weight:</td><td width="15%" class="tdBlue">'.round($WeightAVG).' Kg</td><td width="25%" class="tdBlue">'.$txtlg.':</td><td width="15%" class="tdBlue">'.abs(round($lossgain)).' Kg</td></tr>
+							<tr><td align="center" class="H1" colspan="5"><b>Your Weight  '.round($GoalWeight).' Kg</b></td></tr>
+						</tbody></table>';
+				
+			$strGoalMeasurememt=doGetUserBodyGoalDetails($user_id);
+			$stats_box=$stats_box;
+			$chart=$chart_data;
+			$diffMeasureDetails=$strDiffDetails;
+			$initialMeasurement=$strInitialDetails;
+			$currentMeasurement=$strCurrentDetails;
+			$goalMeasurememt=$strGoalMeasurememt;
+			
+			 $initial_weight = initialWeightDetails($user_id);
+			 $weight_new = currentWeightDetails($user_id);
+			 if($weight_new!=''){
+					$Weight_newlbs = round($weight_new*2.20462262,2);
+					$weight_diff    = $weight_new - $initial_weight;
+					$Weight_difflbs =  round($weight_diff*2.20462262,2);
+			 }
+						
+			if($weight_diff<0){
+				$kgVal=abs($weight_diff);
+				$lbsVal=abs($Weight_difflbs);
+				$kgTxt="kg lost";
+				$lbsTxt="lbs lost";
+				$kgWidth=$kgVal*30;
+				$lbsWidth=$lbsVal*3;
+			}else if($weight_diff>0){
+				 $kgVal=$weight_diff;
+				 $lbsVal=$Weight_difflbs;
+				 $kgTxt="kg gained";
+				 $lbsTxt="lbs gained";
+				 $kgWidth=$kgVal*3;
+				 $lbsWidth=$lbsVal*3;
+			}else{
+				$kgVal="";
+				$lbsVal="";
+				$kgTxt="No Change";
+				$lbsTxt="No Change";
+				$kgWidth="0";
+				$lbsWidth="0";
+			}
+			if($kgVal >'10'){
+				$kgWidth=substr($kgVal,-1,1)*30;
+				$tensval=substr($kgVal,0,1);
+				if($tensval>'1'){
+					$tens=$tensval;
+				}
+				$kgLast=(($tensval+1)*10);
+			}else{
+				$kgLast=100;
+			}
+			$lbsVal=round($lbsVal,0);
+			if($lbsVal >'100'){
+				$hdVal=$lbsVal-100;
+				$lbsWidth=$hdVal*3;
+				$lbsSrt="100";
+				$lbsEnd="200";
+				$lbsLast="200";
+			}else{
+				$lbsSrt="0";
+				$lbsEnd="100";
+				$lbsLast="100";
+			}
+			if(isset($_POST['frmGWeight'])){
+				$insertid=doUpdateMyGoalDetail($_REQUEST);
+			}
+			$kgLast=$kgLast;
+			$lbsLast=$lbsLast;
+			$lbsSrt=$lbsSrt;
+			$lbsEnd=$lbsEnd;
+			$progress=$progress;
+			$lbsWidth=$lbsWidth;
+			$kgWidth=$kgWidth;
+			$kgVal=$kgVal;
+			$lbsVal=$lbsVal;
+			$kgTxt=$kgTxt;
+			$lbsTxt=$lbsTxt;
+			$goalWeightValue=$idealKgValue;
+			$added_date=$added_date;
+			$details=$memberresult[0]; 
+			$user_id=$myuser_id;
+?>
+<script type="text/javascript">
+	function calculateHeight(fld)
+{
+	if(fld.name=="height_in" || fld.name=="height_ft")
+	{
+		// calculate height in inches
+		if(isNaN(fld.form.height_in.value) || fld.form.height_in.value=="") inches=0;
+		else inches=fld.form.height_in.value;
+		if(isNaN(fld.form.height_ft.value) || fld.form.height_ft.value=="") feet=0;
+		else feet=fld.form.height_ft.value;
+		inches=parseInt(parseInt(feet*12) + parseInt(inches));
+		h=Math.round(inches*2.54);
+		fld.form.height_cm.value=h;
+	}
+	else
+	{
+		// turn cm into feets and inches
+		if(isNaN(fld.value) || fld.value=="") cm=0;
+		else cm=fld.value;
+		totalInches=Math.round(cm/2.54);
+		inches=totalInches%12;		
+		feet=(totalInches-inches)/12;
+		fld.form.height_ft.value=feet;
+		fld.form.height_in.value=inches;
+	}
+}
+
+function calculateWeight(fld)
+{
+	if(fld.name=="weight_lb" || fld.name=="lose_lb")
+	{
+		// calculate in kg
+		if(isNaN(fld.value) || fld.value=="") w=0;
+		else w=fld.value;
+		wKg=Math.round(w*0.453*10)/10;
+		if(fld.name=="weight_lb") fld.form.weight_kg.value=wKg;
+		else fld.form.lose_kg.value=wKg;
+	}
+	else
+	{
+		// calculate in lbs
+		if(isNaN(fld.value) || fld.value=="") w=0;
+
+		else w=fld.value;
+		wP=Math.round(w*2.2);
+		if(fld.name=='weight_kg') fld.form.weight_lb.value=wP;
+
+		else fld.form.lose_lb.value=wP;
+	}
+}
+function ClearForm(form){
+form.height_ft.value = "";
+form.height_in.value = "";
+form.height_cm.value = "";
+form.weight_lb.value = "";
+form.weight_kg.value = "";
+}
+
+function IsAmount(sText) {
+	var ValidChars = "0123456789.";
+	var IsAmount=true;
+	var Char;
+	if(sText=="") return false
+		for (i = 0; i < sText.length && IsAmount == true; i++) 	
+		{ 
+			Char = sText.charAt(i); 
+			if (ValidChars.indexOf(Char) == -1) 
+			{
+				IsAmount = false;
+			}
+		}
+		return IsAmount;
+	}
+
+function IsValid(Val,Label) {
+	if(trim(Val)=="")
+	{
+		alert(Label+" Should Not be Empty")
+		return false;
+	}
+	return true;
+}
+
+function trim(str) {
+	return str.replace(/^\s*|\s*$/g,"");
+}
+
+function validateMyStas()
+{
+		var error;
+       
+		if(!document.getElementById('myweight').value){
+			alert("Please enter Weight");
+			document.getElementById('myweight').focus();
+			error=1;
+			return false;
+		} else if(isNaN(document.getElementById('myweight').value)) {
+			alert("Weight does not contain characters");
+			document.getElementById('myweight').focus();
+			error=1;
+			return false;					
+		}
+    	/*if(!document.getElementById('myideal').value){
+		alert("Please enter Ideal");
+		document.getElementById('myideal').focus();
+		error=1;
+		return false;
+		} else if(isNaN(document.getElementById('myideal').value)) {
+			alert("Ideal does not contain characters");
+			document.getElementById('myideal').focus();
+			error=1;
+			return false;					
+		 }*/
+		
+		if(error!=1)
+		{	 <?php if($bft_week!=""){echo $bft_week; ?>
+			 return false; <?php } ?>
+			 var valid=confirm("ARE YOU SURE YOU WANT TO RECORD THIS WEIGHT.\n\nOnce submited, it can't be changed or un-done.\n\nYour next scheduled Weight can be added ON OR after <?php echo $next_update; ?>");
+			 if (valid==true)
+				 return true;	
+			 else
+			   return false;	
+		 }
+}
+
+function weight_popup(){
+  var win = window.open('stats_weight_chart.php', 'FitnessTest', 'height=400, width=525, left=20, top=20, toolbar=no, menubar=no, directories=no, location=no, scrollbars=no, status=no, resizable=yes, fullscreen=no'); 
+  win.focus();     
+	win.moveTo(0, 0);
+}
+function validateMyWeightGoals(){
+	if(document.getElementById('frmGWeight').value==''){
+		alert('Please enter your Goal Weight');
+		document.getElementById('frmGWeight').focus();
+		return false;
+	}else{
+		document.weightGoal.submit();
+	}
+}
+
+function calcIt() {
+	oForm = document.calc;
+	feet = parseInt(oForm.feet.value*1);
+	inches = parseInt(oForm.inches.value*1);
+
+	if (!isNumeric(feet,"Feet:","feet"))
+		return false;
+	if (!isNumeric(inches,"Inches:","inches"))
+		return false;
+
+	if  (feet <= 3 || inches > 11) {
+		alert ("Invalid data.  Please check and re-enter!");
+		return false;
+	}
+
+	var weight = 0;
+	var height = ((feet*12) + inches);
+
+	if (oForm.sex[0].checked) {
+		if (height >= 60) {
+			height -= 60;
+			weight = 106 + (6 * height);
+		} else {
+			weight = 76 + (2.5 * (inches));
+		}
+	} else {
+
+		if (height >= 60) {
+			height -= 60;
+			weight = 100 + (5 * height);
+		} else {
+			weight = 70 + (2.5 * (inches));
+		}
+	}
+
+	frame=oForm.frame.options[oForm.frame.selectedIndex].value;
+	if (frame == 'S')
+		weight -= Math.round(weight * .07);
+
+	if (frame == 'L')
+		weight += Math.round(weight * .07);
+
+	s = weight + " - " + (weight + 4) + " pounds<br>";
+	kilos = Math.round(weight/2.2);
+	s += kilos + " - " + (kilos+2) + " kilograms";
+	Get("results").style.border="1px solid #2F7895";
+	Get("results").innerHTML = s;
+	return true;
+}
+function resetCalc(){
+	Get("results").style.border="0px solid #2F7895";
+	Get("results").innerHTML = '';
+}
+function showMeasureVal(showDivId,hideDivId){
+	document.getElementById(showDivId).style.display='block';
+	document.getElementById(showDivId+'-Scall').style.display='block';
+	document.getElementById(hideDivId).style.display='none';
+	document.getElementById(hideDivId+'-Scall').style.display='none';
+}
+function GetXmlHttpObject() {
+		if (window.XMLHttpRequest) {
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+			return new XMLHttpRequest();
+		}
+		if (window.ActiveXObject) {
+		// code for IE6, IE5
+			return new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		return null;
+	}
+
+
+function showHFHSWBDetail(divId){	
+	document.getElementById(divId+"-show").style.display="none";
+	document.getElementById(divId+"-hide").style.display="block";
+	document.getElementById(divId).style.display="block";
+}
+function hideHFHSDetail(divId){
+	document.getElementById(divId+"-hide").style.display="none";
+	document.getElementById(divId+"-show").style.display="block";
+	document.getElementById(divId).style.display="none";
+} 
+function viewMoreList(val){
+	var curCnt=eval(document.getElementById('show_more_count_'+val).value);
+	var totalCnt=eval(document.getElementById('total_count_'+val).value);
+	var nextcnt=(curCnt+5);
+	
+	if(totalCnt<nextcnt){
+	nextcnt=totalCnt-1;
+	}
+	var checkCnt=totalCnt-1;
+
+	if(checkCnt<=nextcnt){
+	document.getElementById('show_more_'+val).style.display="none";
+	}
+	for(var i=curCnt;i<=nextcnt;i++) {
+	document.getElementById(val+i).style.display="block";
+	}
+	
+	document.getElementById('show_more_count_'+val).value=nextcnt;
+}              
+</script>
+<div class="mailcenter_top">
+    <div class="mailcenter_top_left"></div>
+        <div class="mailcenter_top_middle generic_layout_container ">			
+                <h3>Add Your Weight</h3>
+        </div>
+    <div class="mailcenter_top_right"></div>
+</div>
+<div class="mailcenter_middle add-weight-page"> 
+			<div>
+            	<h2 style="text-align:center; padding-top:10px;"><strong>Adding Your Weight</strong></h2>
+        <P align="left" colspan="2" class="desc-txt" style="text-align:justify; padding-right:5px;border-bottom: 1px solid #096;">Knowing your weight and how it changes over a period of time can be a great motivational tool. Having a visual record of your weight helps to highlight how changes in your food and exercise can make a difference. We all know that our weight fluctuates from day to day so you may only add your weight once every 7 days. Your &quot;weight goals&quot; can be added or changed at any time but  once you enter your actual weight for a given week, you'll not be able to change or delete it.. We advise <strong>CAUTION</strong> when entering your weight, be honest, submitting wrong or false weights will only serve to display inaccurate data.<br /><br /></p>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">			  
+				  <tr>
+					<td height="30" align="center" class="section_curve">
+				  <loop name="details">
+				  
+					<table border="0" width="100%" cellPadding="0" cellSpacing="0" id="mystats">
+                   
+					 
+					  
+					  <tr>
+						<td colspan="2"  style="padding-left:5px;"><table width="100%" border="0">
+						  <tr>
+							<td width="" height="40"   valign="bottom" nowrap="nowrap" align="right">Add Todays Weight:</td>
+                             <form name="addmystats" id="addmystats" action="pages/add-your-weight?add=1" method="post" onsubmit="return validateMyStas();">
+					  <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" />
+							  <td width=""  align="left" valign="top" nowrap="nowrap"><input type="text" name="myweight" id="myweight"  value="" class="userDetailsText"/> 
+								<span class="kgtxt">kg</span> </td>
+                                <td height="30" colspan="4"  align="left" nowrap="nowrap" class="add-measure-buttons">
+							<input type="submit" class="button1 addButton" name="submit" id="AddMyStats" value="Add" style="cursor:pointer;"/>
+							<input type="button" onclick="window.location.href=window.location.href" class="button1 cancelButton" name="cancel" id="cancel" value="Cancel" />
+							
+							 </td>
+                             <input type="hidden" name="myGweightd" id="myGweightd" value="<?php echo $goalWeightValue; ?>"  />
+                             </form>
+                             <form name="weightGoal" id="weightGoal" action="pages/add-your-weight" method="post" >
+                             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" />
+							  <td width="" align="right" style="padding-left:0px; padding-right:2px;" >Set Ideal Weight:</td> 
+							  <td width="" align="left" valign="top">
+                              <input type="text" name="frmGWeight" id="frmGWeight" value="<?php echo $goalWeightValue; ?>" class="userDetailsText"/> <span class="kgtxt">kg</span></td>
+                              <td align="left">
+                              	<input type="submit" onclick="validateMyWeightGoals();" name="gWghtButton" id="gWghtButton" value="Add Goal" style="margin-right:8px;" />
+                              </td>
+                              </form>
+							</tr>
+						  <tr>
+							<td colspan="2"  align="left" nowrap="nowrap">
+
+                            </td>
+						 </tr>
+						  </table></td>
+					  </tr>
+                      <tr><td></td></tr>
+					  <tr>
+                      <td style="text-align: center;color: red;font-weight: bold;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;padding: 5px 0;">
+                      	<?php echo $nextMeasurement; ?>
+                      </td>
+					  </tr>
+                      <tr><td height="8px"></td></tr>
+					  </table>
+				  
+				</loop name="details"></td></tr>
+				</table>
+                <div class="progress-div">
+					<div class="progress-txt hs-progress" style="margin-bottom:0;"><h4 class="wgt-pgrs">Your Weight Progress</h4></div>
+                    <div class="cur-weight">Your Current Weight is : <?php echo $current_weight; ?>kg</div>
+                <div class="progress-values">
+						<div class="measure-left">
+							<div class="progress-val">
+								<div id="kgVal-Div">
+									<h1><?php echo $kgVal; ?> </h1><span><?php echo $kgTxt; ?></span>
+								</div>
+								<div id="lbsVal-Div" style="display:none;">
+									<h1><?php echo $lbsVal; ?> </h1><span><?php echo $lbsTxt; ?></span>
+								</div>
+							</div>
+							<div class="progress-type">
+								<span><input type="radio" name="weightType" id="weightType" onclick="showMeasureVal('kgVal-Div','lbsVal-Div')" checked="checked" value="1" />kg</span>
+								<span><input type="radio" name="weightType" id="weightType" onclick="showMeasureVal('lbsVal-Div','kgVal-Div')" value="2" />lbs</span>
+							</div>
+						</div>
+						<div class="measure-right">
+							<div id="kgVal-Div-Scall">
+								<div class="measure-scale">
+									<div style=" width:<?php echo $kgWidth; ?>px; background:#FFF700;height:20px;"></div>
+								</div>
+								<div class="measure-lines">
+									<?php for($i = 0; $i < 100; $i+=10){ ?>
+										<div>'</div>
+									<?php } ?>
+										<div class="last-div">'</div>
+								</div>
+								<div class="measure-no">
+									<?php for($i = 0; $i < 100; $i+=10){ ?>
+										<div><?php echo $tens; ?><?php echo $i; ?></div>
+									<?php } ?>
+										<div class="last-div"><?php echo $kgLast; ?></div>
+								</div>
+							</div>
+							<div id="lbsVal-Div-Scall" style="display:none;">
+								<div class="measure-scale">
+									<div style=" width:<?php echo $lbsWidth; ?>px; background:#FFF700;height:20px;"></div>
+								</div>
+								<div class="measure-lines">
+									<?php for($i = 0; $i < 100; $i+=10){ ?>
+										<div>'</div>
+									<?php } ?> 
+										<div class="last-div">'</div>
+								</div>
+								<div class="measure-no">
+									<?php for($i = 0; $i < 100; $i+=10){ ?> 
+										<div><?php echo $i; ?></div>
+									<?php } ?> 
+										<div class="last-div"><?php echo $lbsLast; ?></div>
+								</div>
+							</div>
+						</div>
+					
+                    </div>
+                    </div>
+                    
+                    <div class="measure-table hsPage">
+                    <table  border="0" cellspacing="0" cellpadding="0" width="100%">
+                      <tr>
+                        <td colspan="6" class="border-top-td"></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td>Start</td>
+                        <td>Now</td>
+                        <td class="border-right-td">Lost/Gained</td>
+                        <td>Goals</td>
+                        <td class="last">Target Progress</td>
+                      </tr>
+                      <tr>
+                        <td colspan="6" class="border-top-td"></td>
+                      </tr>
+                      <tr id="weight-Div" >
+                        <td>Your Weight:</td>
+                        <td class="pink-txt"><?php echo $initial_weight; ?> kg</td>
+                        <td class="pink-txt"><?php echo $current_weight; ?> kg</td>
+                        <td class="border-right-td"><?php echo $weight_diff_txt; ?></td>
+                        <td class="pink-txt"><?php echo $goal_weight; ?> kg</td>
+                        <td class="pink-txt lastTd"><?php echo $targetWeightmsg; ?></td>
+                      </tr>
+                      <tr id="leftfoream-Div" style="display:none">
+                        <td>Left Foream:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.LeftFoream_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.LeftFoream_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.LeftFoream; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gLeftFoream; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.LeftFoream; ?></td>
+                      </tr>
+                      <tr id="leftbicep-Div" style="display:none">
+                        <td>Left Bicep:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.LeftBicep_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.LeftBicep_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.LeftBicep; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gLeftBicep; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.LeftBicep; ?></td>
+                      </tr>
+                      <tr id="rightforearm-Div" style="display:none">
+                        <td>Right Foream:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.RightFoream_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.RightFoream_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.RightFoream; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gRightFoream; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.RightFoream; ?></td>
+                      </tr>
+                      <tr id="rightbicep-Div" style="display:none">
+                        <td>Right Bicep:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.RightBicep_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.RightBicep_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.RightBicep; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gRightBicep; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.RightBicep; ?></td>
+                      </tr>
+                      <tr id="neck-Div" style="display:none">
+                        <td>Neck:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.Neck_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.Neck_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.Neck; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gNeck; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.Neck; ?></td>
+                      </tr>
+                      <tr id="chest-Div" style="display:none">
+                        <td>Chest:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.Chest_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.Chest_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.Chest; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gChest; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.Chest; ?></td>
+                      </tr>
+                      <tr id="waist-Div" style="display:none">
+                        <td>Waist:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.Waist_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.Waist_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.Waist; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gWaist; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.Waist; ?></td>
+                      </tr>
+                      <tr id="hips-Div" style="display:none">
+                        <td>Hips:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.Hips_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.Hips_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.Hips; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gHips; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.Hips; ?></td>
+                      </tr>
+                      <tr id="leftthigh-Div" style="display:none">
+                        <td>Left Thigh:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.LeftThigh_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.LeftThigh_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.LeftThigh; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gLeftThigh; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.LeftThigh; ?></td>
+                      </tr>
+                      <tr id="rightthigh-Div" style="display:none">
+                        <td>Right Thigh:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.RightThigh_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.RightThigh_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.RightThigh; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gRightThigh; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.RightThigh; ?></td>
+                      </tr>
+                      <tr id="leftcalf-Div" style="display:none">
+                        <td>Left Calf:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.LeftCalf_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.LeftCalf_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.LeftCalf; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gLeftCalf; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.LeftCalf; ?></td>
+                      </tr>
+                      <tr id="rightcalf-Div" style="display:none">
+                        <td>Right Calf:</td>
+                        <td class="pink-txt"><?php echo $initialMeasurement.RightCalf_start; ?> cm</td>
+                        <td class="pink-txt"><?php echo $currentMeasurement.RightCalf_new; ?> cm</td>
+                        <td class="border-right-td"><?php echo $diffMeasureDetails.RightCalf; ?></td>
+                        <td class="pink-txt"><?php echo $goalMeasurememt.gRightCalf; ?> cm</td>
+                        <td class="pink-txt lastTd"><?php echo $strProgressDetail.RightCalf; ?></td>
+                      </tr>
+                       <tr>
+                        <td colspan="6" class="border-top-td"></td>
+                      </tr>
+                    </table>
+                    </div>
+                    <div class="inner-box-data" style=" margin-left:60px; margin-right:0; width:710px; display:block;" id="weight-Table">
+                        <div class="hf-hs-title" style="width:710px;">
+                            <div class="hf-hs-text"> Your - Weight Progress Table</div>
+                            <div class="hf-hs-nav">
+                                <div id="hf-wbmt-show" style="display:block;"><a onclick="showHFHSWBDetail('hf-wbmt')">show...
+                                <img src="images/hf-down.png" alt="down" /></a></div>
+                                <div id="hf-wbmt-hide" style="display:none;"><a onclick="hideHFHSDetail('hf-wbmt')">hide...
+                                <img src="images/hf-up.png" alt="up" /></a></div>
+                            </div>
+                        </div>
+                        <div class="inner-box-content" id="hf-wbmt" style="display:none;width:704px;">
+                        	<?php 
+                            	$weightList = getWeightDetails($user_id,$goal_weight);
+                            ?>
+                            <div class="measure-table hsPage">
+                           <table width="100%" >
+                             <tr>
+                                <td style="width:200px;">Date</td>
+                                <td style="width:130px;">Weight</td>
+                                <td style="width:160px;">Difference</td>
+                                <td class="last" style="width:195px !important; min-width:inherit !important;">Target (<span class="blue-txt"><?php echo $goal_weight; ?> kg</span>)</td>
+                              </tr>
+                              <tr>
+                              <td colspan="4">
+                          <?php for($n=0;$n<count($weightList);$n++){ 
+                          		if(count($weightList)>'5'){ 
+                                    $id="id='weight".$n."'";
+                                }else{
+                                    $id="";
+                                }
+                                if($n>4){
+                                    $style="display:none;";    	
+                                }else{
+                                    $style="display:block;";  
+                                }
+                          ?>
+                          	<div <?php echo $id; ?> style="<?php echo $style; ?>">
+                              <table width="100%">
+                              <tr>
+                                <td colspan="4" class="border-top-td" style="width:100%;"></td>
+                              </tr>
+                              <tr >
+                                <td style="width:200px;"><?php echo $weightList[$n]['AddedDate']; ?> </td>
+                                <td style="width:130px;"><?php echo $weightList[$n]['Weight_new']; ?> kg</td>
+                                <td style="width:160px;"><?php echo $weightList[$n]['diff_txt']; ?></td>
+                                <td class="lastTd" style="width:195px !important;min-width:inherit !important;"><?php echo $weightList[$n]['target_txt']; ?></td>
+                              </tr></table>
+                              </div>
+                          <?php } ?>
+                          <?php if(count($weightList)>'5'){ ?>
+                          <div class="weight-more" id="show_more_weight" onclick="viewMoreList('weight')">
+                          <a href="javascript:void(0);" id="" class="buttonlink icon_viewmore">View more...</a></div>
+                          <?php } ?>			
+                          <input type="hidden" name="show_more_count_weight" id="show_more_count_weight" value="4" />
+	  					  <input type="hidden" name="total_count_weight" id="total_count_weight" value="<?php echo count($weightList); ?>" />
+                            </td></tr></table>
+                            </div>
+                     	</div>
+                    </div>
+                    <div class="graph" style="float:left; width:100%;">
+                        <table border="0" width="100%" style="float:none;">
+                            <tr>
+                                <td align="right">
+                                        <h4 style="text-align:right; margin-top:8px;">Body Weight</h4> 
+                                          <input type="hidden" name="browseby" id="browseby" value="weight" />
+                                          <input type="hidden" name="view_user" id="view_user" value="<?php echo $user_id; ?>" />
+                                 </td>
+                                 <td align="left">
+                                         <select name="viewby" id="viewby" onchange="getmeasurementDetails('no');">
+                                           <option value="day">Weeks</option>
+                                            <option value="month">Months</option>
+                                            <option value="year">Years</option>
+                                        </select>
+                                 </td> 
+                                </tr>
+                            </table>
+                       						
+                        <div id="piechart" ></div>
+                        
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  var data = google.visualization.arrayToDataTable(<?php echo $gchartdata; ?>);
+  var options = {
+					title: "Goal : <?php echo $GoalWeight; ?>kg",
+					legend: { position: 'bottom' },
+				backgroundColor: '#ffffff',
+        		vAxis: {
+                    title: 'Weight (kg)'
+                     },
+				};
+  var chart = new google.visualization.LineChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+function getmeasurementDetails(mSg) {
+var measure = document.getElementById('browseby').value;
+if(mSg=='change'){
+	document.getElementById("weight-Div").style.display='none';
+	document.getElementById("leftfoream-Div").style.display='none';
+	document.getElementById("leftbicep-Div").style.display='none';
+	document.getElementById("rightforearm-Div").style.display='none';
+	document.getElementById("rightbicep-Div").style.display='none';
+	document.getElementById("neck-Div").style.display='none';
+	document.getElementById("chest-Div").style.display='none';
+	document.getElementById("waist-Div").style.display='none';
+	document.getElementById("hips-Div").style.display='none';
+	document.getElementById("leftthigh-Div").style.display='none';
+	document.getElementById("rightthigh-Div").style.display='none';
+	document.getElementById("leftcalf-Div").style.display='none';
+	document.getElementById("rightcalf-Div").style.display='none';
+	document.getElementById(measure+'-Div').style.display='table-row';
+}
+var viewby  = document.getElementById('viewby').value;
+var view_user  = document.getElementById('view_user').value;
+xmlhttp=GetXmlHttpObject();
+	if(xmlhttp!=null) {
+		var url    = 'images/ajax_chart_functions.php?measurement='+measure+'&viewby='+viewby+'&view_user='+view_user;
+		//alert(url);
+		dataType: "json",
+		xmlhttp.onreadystatechange = Ajaxsuccess;
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send(null);
+	} else {
+		alert("Your browser doesn't support xmlhttp");
+		return;
+	}
+	
+		
+		
+if(viewby=='week'){	  
+  var data = google.visualization.arrayToDataTable(<?php echo $gchartdata_week; ?>);
+}else if(viewby=='month'){
+   var data = google.visualization.arrayToDataTable(<?php echo $gchartdata_month; ?>);
+}else if(viewby=='day'){
+   var data = google.visualization.arrayToDataTable(<?php echo $gchartdata; ?>);
+}else if(viewby=='year'){
+   var data = google.visualization.arrayToDataTable(<?php echo $gchartdata_year; ?>);
+}
+var options = {
+					title: "Goal : <?php echo $GoalWeight; ?>kg",
+					legend: { position: 'bottom' },
+				backgroundColor: '#ffffff',
+        		vAxis: {
+                    title: 'Weight (kg)'
+                     },
+				};
+  var chart = new google.visualization.LineChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+
+    
+ 
+}
+
+
+function Ajaxsuccess() {
+	if(xmlhttp.readyState == 4) {
+		var strValue =	xmlhttp.responseText;
+		
+		var responceString =strValue.split("&&"); 
+		//gchartJS(strValue);
+		//alert(responceString[0]);
+		document.getElementById('statbox').innerHTML = responceString[1];
+	}
+}
+function chartJS(XMLdata){
+	var so = new SWFObject("images/amline/chart_source/amline.swf", "amline", "440", "250", "8", "#FFFFFF");
+			so.addVariable("path", "images/amline/chart_source/");
+			so.addVariable("settings_file", encodeURIComponent("images/amline/chart_source/amline_settings.xml"));
+			so.addVariable("chart_data", encodeURIComponent(XMLdata));
+			so.write("flashcontent");	
+}
+</script>
+                        <div id="statbox" style="float:left; width:100%;">
+                         <?php echo $stats_box; ?>
+                        </div> 
+                    </div>
+                    
+			</div>
+			
+       
+         </div>
+        <?php } ?>

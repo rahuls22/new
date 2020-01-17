@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+  
+  #for PHPMYADMIN
+  RewriteCond %{REQUEST_URI} ^/phpmyadmin
+  RewriteRule ^.*$ - [NC,L]
+
+</IfModule>
